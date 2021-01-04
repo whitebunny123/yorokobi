@@ -1,0 +1,884 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <title>퍼시픽바이오</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" media="only screen and (min-width:981px)" href="css/pacificBIO(header).css">
+    <link rel="stylesheet" media="only screen and (min-width:981px)" href="css/pacificBIO(main).css">
+    <link rel="stylesheet" media="only screen and (min-width:981px)" href="css/pacificBIO(footer).css">
+    <link rel="stylesheet" media="only screen and (max-width:980px)" href="css/pacificBIO(header)_m.css">
+    <link rel="stylesheet" media="only screen and (max-width:980px)" href="css/pacificBIO(main)_m.css">
+    <link rel="stylesheet" media="only screen and (max-width:980px)" href="css/pacificBIO(footer)_m.css">
+    <link rel="stylesheet" type="text/css" href="XEIcon-2.2.0/xeicon.min.css">
+    <script   src="https://code.jquery.com/jquery-3.4.1.min.js"   integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="   crossorigin="anonymous"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+    <!-- FlexSlider -->
+    <script defer src="js/jquery.flexslider.js"></script>
+    <script defer src="js/demo.js"></script>
+    <script type="text/javascript">
+      $(function(){
+      $('.flexslider').flexslider({
+        animation: "slide",
+              //direction: "vertical",
+        start: function(slider){ },
+        //controlsContainer: $(".custom-controls-container"),
+        //customDirectionNav: $(".custom-navigation a"),
+        slideshowSpeed:3000,
+        animationSpeed: 600,
+        pauseOnAction: false//, //페이징 클릭한 다음에 멈추지 말 것
+        //touch:true
+        });
+      //});
+
+       // $(function(){
+            $(window).scroll(function(){
+              var top = $(window).scrollTop();
+              if(top>10){
+                $("#go_top").css({"display":"block"});
+                $("#go_top").find("i").css({"transform":"rotate(180deg)"}).parents("p").css({"padding":"1px"});
+
+
+              }else{
+                 $("#go_top").css({"display":"none"});
+              };
+
+            });
+
+            $(window).scroll(function(){
+                var top = $(window).scrollTop();
+                if(top>10){
+                    $("#header_top").addClass("on");
+                    $("#banner_button2").addClass("on");
+                    $("#nav").addClass("on");
+                }else{
+                    $("#header_top").removeClass("on");
+                    $("#banner_button2").removeClass("on");
+                    $("#nav").removeClass("on");
+                };
+
+
+            });
+
+            $("#go_top").click(function(e){
+                e.preventDefault();
+
+                $("html, body").animate({"scrollTop":0}, 500, function(){});
+            });
+
+            $("#nav_button").parent("a").click(function(e){
+                e.preventDefault();
+                $("#nav").fadeIn(500);
+            });
+
+            $("#nav").find("p").click(function(e){
+                e.preventDefault();
+                $("#nav").fadeOut(500);
+            });
+
+            var banner={num:0,
+                        prev:0,
+                        size:$("#banner").find("li").length,
+                        flag:true,
+                        auto:setInterval(auto_move, 3000)}
+
+            function Banner(){
+                $("#banner").find("li").eq(banner.prev).addClass("middle").siblings().removeClass("middle");
+                $("#banner").find("li").eq(banner.num).css({"left":"1710px"}).addClass("top").animate({"left":"0"}, 700, function(){}).siblings().removeClass("top");
+
+               banner.prev=banner.num;
+
+                $("#banner_button1").children("p").eq(banner.num).addClass("on").siblings().removeClass("on");
+
+                $("#banner_button2").find("span").html(banner.num+1);
+            }
+
+            function auto_move(){
+                 banner.num++;
+                if(banner.num>banner.size-1){
+                    banner.num=0;
+                }
+
+                Banner();
+
+            };
+
+            $("#banner_button2").find("p").eq(0).click(function(){
+
+
+                banner.num--;
+                if(banner.num<0){
+                    banner.num=banner.size-1;
+                }
+
+                Banner();
+
+               clearInterval(banner.auto);
+
+                $("#play_button").children("p").find("i").removeClass("xi-pause").addClass("xi-play");
+
+                banner.flag=false;
+
+
+            });
+
+            $("#banner_button2").find("p").eq(2).click(function(){
+
+                 banner.num++;
+                if(banner.num>banner.size-1){
+                    banner.num=0;
+                }
+
+                Banner();
+
+
+               clearInterval(banner.auto);
+
+               $("#play_button").children("p").find("i").removeClass("xi-pause").addClass("xi-play");
+
+               banner.flag=false;
+
+
+
+            });
+
+           $("#banner_button1").children("p").click(function(){
+               $(this).addClass("on").siblings().removeClass("on");
+
+               var btn=$(this).index();
+
+               $("#banner").find("li").eq(btn).css({"opacity":"0.2"}).addClass("top").animate({"opacity":"1"}, 500, function(){}).siblings().css({"opacity":"0"}).removeClass("top").css({"opacity":"1"});
+
+
+               banner.prev=btn;
+               banner.num=btn;
+               $("#banner_button2").find("span").html(banner.num+1);
+
+               clearInterval(banner.auto);
+
+               $("#play_button").children("p").find("i").removeClass("xi-pause").addClass("xi-play");
+
+               banner.flag=false;
+
+           });
+
+           $("#play_button").children("p").click(function(){
+
+               if(banner.flag){
+                   $(this).find("i").removeClass("xi-pause").addClass("xi-play");
+                   clearInterval(banner.auto);
+                   banner.flag=false;
+               }else{
+                   $(this).find("i").removeClass("xi-play").addClass("xi-pause");
+                   banner.auto=setInterval(auto_move,3000);
+                   banner.flag=true;
+               };
+
+           });
+
+           /*시간 간격 두고 출발하기! setTimeout*/
+
+            $(window).scroll(function(){
+                var top = $(window).scrollTop();
+                if(top>500){
+                  $("#have_w").find("p").eq(0).animate({"top":"0", "opacity":"1"}, 1000, function(){});
+
+                  setTimeout(function(){
+                    $("#have_w").find("p").eq(1).animate({"top":"91px", "opacity":"1"}, 1000, function(){});
+
+
+                  }, 800);
+
+                 setTimeout(function(){
+                   $("#have_w").find("p").eq(2).animate({"top":"174px","opacity":"1"}, 1000, function(){});
+                 }, 1600);
+                };
+            });
+
+
+            //scrollTop위치 html()사용해서 확인해보기
+            $("#have_w").find("ul").children("li").mouseenter(
+           function(){
+
+               var idx=$(this).index();
+
+               if(idx%2==0){
+               $(this).find("p").eq(0).stop().animate({"bottom":"-300px","opacity":"0"}, 700, function(){});
+               $(this).find("p").eq(1).stop().animate({"height":"550px", "padding-top":"30px", "opacity":"1"}, 700, function(){});
+               }else{
+                   $(this).find("p").eq(0).stop().animate({"top":"-300px","opacity":"0"}, 700, function(){});
+                $(this).find("p").eq(1).stop().animate({"height":"550px", "padding-top":"30px", "opacity":"1"}, 700, function(){});
+               };
+           });
+
+            $("#have_w").find("ul").children("li").mouseleave(
+           function(){
+               var idx=$(this).index();
+               if(idx%2==0){
+                   $(this).find("p").eq(0).stop().animate({"bottom":"0","opacity":"1"}, 700, function(){});
+
+               $(this).find("p").eq(1).stop().animate({"height":"0", "padding-top":"0", "opacity":"0"}, 700, function(){});
+                }else{
+                    $(this).find("p").eq(0).stop().animate({"top":"0","opacity":"1"}, 700, function(){});
+
+               $(this).find("p").eq(1).stop().animate({"height":"0", "padding-top":"0", "opacity":"0"}, 700, function(){});
+
+                }
+            });
+
+            /*have 모바일*/
+
+            $(window).scroll(function(){
+                var top = $(window).scrollTop();
+                if(top>10){
+                    $("p#space").addClass("on");
+                }else{
+                    $("p#space").removeClass("on");
+                };
+
+
+            });
+
+            $(window).scroll(function(){
+                var top = $(window).scrollTop();
+                if(top>50){
+                  $("#have_m").find("p").eq(0).animate({"top":"-15px", "opacity":"1"}, 1000, function(){});
+
+                  setTimeout(function(){
+                    $("#have_m").find("p").eq(1).animate({"top":"20px", "opacity":"1"}, 1000, function(){});
+
+
+                  }, 800);
+
+                 setTimeout(function(){
+                   $("#have_m").find("p").eq(2).animate({"top":"60px","opacity":"1"}, 1000, function(){});
+                 }, 1600);
+                };
+            });
+
+            $("#have_m").find("ul").children("li").mouseenter(
+           function(){
+
+               var idx=$(this).index();
+
+               if(idx%2==0){
+               $(this).find("p").eq(0).stop().animate({"bottom":"-300px","opacity":"0"}, 700, function(){});
+               $(this).find("p").eq(1).stop().animate({"height":"41.3vw", "padding-top":"4vw", "opacity":"1"}, 700, function(){});
+               }else{
+                   $(this).find("p").eq(0).stop().animate({"top":"-300px","opacity":"0"}, 700, function(){});
+                $(this).find("p").eq(1).stop().animate({"height":"41.3vw", "padding-top":"4vw", "opacity":"1"}, 700, function(){});
+               };
+           });
+
+            $("#have_m").find("ul").children("li").mouseleave(
+           function(){
+               var idx=$(this).index();
+               if(idx%2==0){
+                   $(this).find("p").eq(0).stop().animate({"bottom":"0","opacity":"1"}, 700, function(){});
+
+               $(this).find("p").eq(1).stop().animate({"height":"0", "padding-top":"0", "opacity":"0"}, 700, function(){});
+                }else{
+                    $(this).find("p").eq(0).stop().animate({"top":"0","opacity":"1"}, 700, function(){});
+
+               $(this).find("p").eq(1).stop().animate({"height":"0", "padding-top":"0", "opacity":"0"}, 700, function(){});
+
+                }
+            });
+
+            /*propose*/
+
+            $("#propose_thumb").find("li").mouseenter(function(){
+
+
+                $(this).css({"background-size":"100%"}).stop().animate({"background-size":"110%"},500,function(){});
+
+                $(this).find("a").css({"font-size":"calc(25px + 1.4vw)"});
+
+
+            });
+            $("#propose_thumb").find("li").click(function(e){
+                e.preventDefault();
+               var idx=$(this).index();
+               $("#propose_contents").find("li").css({"opacity":"0"}).eq(idx).css({"opacity":"0.7"}).addClass("on").animate({"opacity":"1"}, 700, function(){}).siblings().removeClass("on");
+           });
+
+            $("#propose_thumb").find("li").mouseleave(function(){
+                $(this).css({"background-size":"110%"}).stop().animate({"background-size":"100%"},500,function(){});
+                $(this).find("a").css({"font-size":"calc(25px + 1.3vw)"});
+            });
+
+            $(window).scroll(function(){
+                var top1 = $(window).scrollTop();
+                $("#scroll").text(top1);
+
+            });
+
+
+            /*propose 모바일*/
+
+            $("#propose_thumb_m").find("li").mouseenter(function(){
+
+
+                $(this).css({"background-size":"100%"}).stop().animate({"background-size":"110%"},500,function(){});
+
+                $(this).find("a").css({"font-size":"3.8vw"});
+
+
+            });
+            $("#propose_thumb_m").find("li").click(function(e){
+                e.preventDefault();
+               var idx=$(this).index();
+               $("#propose_contents_m").find("li").css({"opacity":"0"}).eq(idx).css({"opacity":"0.7"}).addClass("on").animate({"opacity":"1"}, 700, function(){}).siblings().removeClass("on");
+           });
+
+            $("#propose_thumb_m").find("li").mouseleave(function(){
+                $(this).css({"background-size":"110%"}).stop().animate({"background-size":"100%"},500,function(){});
+                $(this).find("a").css({"font-size":"3.5vw"});
+            });
+
+            /*
+
+            $(window).scroll(function(){
+                var top1 = $(window).scrollTop();
+                $("#scroll").text(top1);
+
+            });
+            */
+
+            /*focus 스크롤 이벤트*/
+
+
+            $(window).scroll(function(){
+                var top2 = $(window).scrollTop();
+                if(top2>3100){
+                    $("#focus").children("ul").children("li").eq(0).animate({"opacity":"1", "top":"0"}, 700, function(){});
+                };
+
+                if(top2>3500){
+                    $("#focus").children("ul").children("li").eq(1).animate({"opacity":"1", "top":"0"}, 700, function(){});
+                };
+
+                if(top2>3800){
+                    $("#focus").children("ul").children("li").eq(2).animate({"opacity":"1", "top":"0"}, 700, function(){});
+                };
+
+            });
+
+            /*focus 스크롤 이벤트 모바일*/
+
+            $(window).scroll(function(){
+                var top2 = $(window).scrollTop();
+                if(top2>600){
+                    $("#focus_m").children("ul").children("li").eq(0).animate({"opacity":"1", "top":"0"}, 700, function(){});
+                };
+
+                if(top2>700){
+                    $("#focus_m").children("ul").children("li").eq(1).animate({"opacity":"1", "top":"0"}, 700, function(){});
+                };
+
+                if(top2>800){
+                    $("#focus_m").children("ul").children("li").eq(2).animate({"opacity":"1", "top":"0"}, 700, function(){});
+                };
+
+            });
+
+
+            $("#bottom_bg").children("p").eq(0).mouseenter(function(){
+              $(this).css({"transform":"rotate(-2deg)"});
+            });
+
+            $("#bottom_bg").children("p").mouseleave(function(){
+              $(this).css({"transform":"rotate(0deg)"});
+            });
+
+            $("#bottom_bg").children("p").eq(1).mouseenter(function(){
+              $(this).css({"transform":"rotate(-5deg)"});
+            });
+
+            $("#bottom_bg").children("p").eq(2).mouseenter(function(){
+              $(this).css({"transform":"rotate(8deg)"});
+            });
+
+
+
+        });
+    </script>
+</head>
+<body>
+   <!-- 스크롤 인디케이터-->
+   <!--
+    <p id="scroll"></p>
+   -->
+
+    <p id="go_top">
+       <a href="#">
+        <i class="xi-angle-down-thin"></i>
+       </a>
+    </p>
+
+    <header>
+
+      <div id="header_top">
+
+       <div class="logo">
+           <h1 class="hidden">로고</h1>
+           <a href="#" class="web">
+               <p id="logo"></p>
+           </a>
+           <div class="mobile">
+                <p><a href="#"></a></p>
+                <div>
+                  <p>퍼시픽 바이오</p>
+                  <p>자연과 공존하는 친환경 기업</p>
+                </div>
+           </div>
+       </div>
+
+       <a href="#">
+            <p id="nav_button"></p>
+       </a>
+
+      </div><!--header_top END-->
+
+      <nav id="nav">
+       <h1 class="hidden">네비게이터</h1>
+       <p class="web">
+           <a href="#">
+           </a>
+       </p>
+
+       <div class="mobile">
+           <p></p>
+           <p>
+               <a href="#">
+           </a>
+       </p>
+       </div>
+
+       <dl>
+           <dt>Introduction</dt>
+           <dd><a href="subpage/company.html">회사소개</a></dd>
+           <dd><a href="subpage/business.html">사업소개</a></dd>
+       </dl>
+       <dl>
+           <dt>Information</dt>
+           <dd><a href="subpage/invest.html">투자정보</a></dd>
+           <dd><a href="subpage/notice.html">공지사항</a></dd>
+           <dd><a href="subpage/contact.html">CONTACT</a></dd>
+       </dl>
+       <dl>
+           <dt class="hidden">언어선택</dt>
+           <dd><a href="#">KOR</a></dd>
+           <dd><a href="#">ENG</a></dd>
+       </dl>
+      </nav><!--nav END-->
+
+      <p class="mobile" id="space"></p>
+
+      <section id="banner" class="web">
+        <h1 class="hidden">배너</h1>
+        <ul>
+            <li class="top">
+               <p>
+                    <span>퍼시픽 바이오는</span>
+                    <span>자연과의 공존</span>
+                    <span>을 추구합니다.</span>
+               </p>
+            </li>
+            <li class="middle">
+                <p>
+                    <span>퍼시픽 바이오는</span>
+                    <span>친환경 에너지 솔루션</span>
+                    <span>을 제공합니다.</span>
+               </p>
+            </li>
+            <li>
+               <div>
+                <p>
+                    <span>퍼시픽 바이오는</span>
+                    <span>바이오 연료</span>
+                    <span>및</span>
+                </p>
+                <p>
+                    <span>에너지 절감 촉매/첨가제</span>
+                    <span>를 제공합니다.</span>
+                </p>
+               </div>
+            </li>
+        </ul>
+
+        <div id="banner_button1">
+            <p class="on"></p>
+            <p></p>
+            <p></p>
+        </div>
+
+        <div id="play_button">
+            <p>
+                <i class="xi-pause"></i>
+            </p>
+        </div>
+
+      </section><!--banner END-->
+
+        <div id="container" class="cf mobile">
+         	<div id="main" role="main">
+            <section class="slider">
+              <div class="flexslider">
+      			  <ul class="slides">
+      					<li>
+      						<img src="imgs/mobile/header/banner/nature1_460.jpg" style="width:100%; height:auto;" />
+      					  <div class="flex-caption">
+                    <span>퍼시픽 바이오는</span>
+                    <span>자연과의 공존</span>
+                    <span>을 추구합니다.</span>
+                  </div><!--div로 사용하는 것-->
+      					</li>
+      					<li>
+      						<img src="imgs/mobile/header/banner/leaf1_460.jpg" style="width:100%; height:auto;" />
+      					  <div class="flex-caption">
+                    <span>퍼시픽 바이오는</span>
+                    <span>친환경 에너지 솔루션</span>
+                    <span>을 제공합니다.</span>
+                  </div>
+      					</li>
+      					<li>
+      				  	<img src="imgs/mobile/header/banner/nature3_460.jpg" style="width:100%; height:auto;" />
+      					  <div class="flex-caption">
+                    <p>
+                      <span>퍼시픽 바이오는</span>
+                      <span>바이오 연료</span>
+                      <span>및</span>
+                    </p>
+                    <p>
+                      <span>에너지 절감 촉매/첨가제</span>
+                      <span>를 제공합니다.</span>
+                    </p>
+                  </div>
+      					</li>
+      			  </ul>
+              </div><!-- flexslider End-->
+            </section>
+      		</div>
+
+        </div><!--container End-->
+
+      <div id="banner_button2" class="web">
+         <div>
+          <p>
+             <i class="xi-angle-up"></i>
+          </p>
+          <p><span>1</span>/3</p>
+          <p>
+             <i class="xi-angle-down"></i>
+          </p>
+         </div>
+      </div>
+
+    </header><!--header END-->
+
+    <main>
+        <section id="have_w" class="web">
+            <h1 class="hidden">WHAT WE HAVE</h1>
+
+            <div>
+                <div class="title">
+                    <p>WHAT</p>
+                    <p>WE</p>
+                    <p>HAVE</p>
+                </div>
+                <ul>
+                    <li>
+                        <a href="#">
+                            <p>혁신적인<br/>재활용 공정</p>
+                            <p>퍼시픽바이오는<br/>선도적인 재활용 시스템을<br/>구축함으로써<br/>최종적인 폐기물이<br/>‘0’이 되도록 끊임없는<br/>기술혁신을 거듭하고<br/>있으며, 다양한 R&amp;D<br/>활동을 통해 그 가치를<br/>지속적으로 높여 나가고<br/>있습니다.</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <p>다양한<br/>폐기물/부산물<br/>처리 경험</p>
+                            <p>전세계 주요국에서<br/>수거되는 거의 모든<br/>동/식물성 유지폐기물과<br/>부산물들을 처리해왔으며,<br/>각각의 성상을 분석,<br/>이를 원료로 한<br/>바이오연료를 제조함에<br/>있어서 선도적인 위치를<br/>유지해왔습니다.</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <p>범용성이<br/>높은 제품군과<br/>다양한 솔루션</p>
+                            <p>퍼시픽바이오가 생산하는<br/>바이오연료 제품과<br/>다양한 촉매/첨가제들은<br/>발전용, 수송용 등<br/>화석연료가 사용되는<br/>모든 부분에<br/>적용 가능하며,<br/>에너지 효율, 친환경적인 <br/>가치를 동시에<br/>극대화 합니다.</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <p>경제성을 내재한<br/>독자적 기술</p>
+                            <p>퍼시픽바이오의<br/>핵심기술은 그 자체로<br/>설비투자 및 비용 부담이<br/>상대적으로 적을 뿐<br/>아니라 처리가 어려운<br/>폐기물들을 주된<br/>대상으로하고 있어<br/>그 자체로 경제성을<br/>확보, 사업적인 가치가<br/>높습니다.
+                            </p>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <p></p>
+        </section>
+
+        <section id="have_m" class="mobile">
+            <h1 class="hidden">WHAT WE HAVE</h1>
+
+            <div>
+                <div class="title">
+                    <p>WHAT</p>
+                    <p>WE</p>
+                    <p>HAVE</p>
+                </div>
+                <ul>
+                    <li>
+                        <p>혁신적인<br/>재활용 공정</p>
+                        <p>퍼시픽바이오는 선도적인 재활용 시스템을 구축함으로써 최종적인 폐기물이 ‘0’이 되도록 끊임없는 기술혁신을 거듭하고 있으며, 다양한 R&amp;D 활동을 통해 그 가치를 지속적으로 높여 나가고 있습니다.</p>
+                        </li>
+                    <li>
+                        <p>다양한<br/>폐기물/부산물<br/>처리 경험</p>
+                        <p>전세계 주요국에서 수거되는 거의 모든 동/식물성 유지폐기물과 부산물들을 처리해왔으며, 각각의 성상을 분석, 이를 원료로 한 바이오연료를 제조함에 있어서 선도적인 위치를 유지해왔습니다.</p>
+                        </li>
+                    <li>
+                        <p>범용성이<br/>높은 제품군과<br/>다양한 솔루션</p>
+                        <p>퍼시픽바이오가 생산하는 바이오연료 제품과 다양한 촉매/첨가제들은 발전용, 수송용 등 화석연료가 사용되는 모든 부분에 적용 가능하며, 에너지 효율, 친환경적인 가치를 동시에 극대화 합니다.</p>
+                        </li>
+                    <li>
+                        <p>경제성을 내재한<br/>독자적 기술</p>
+                        <p>퍼시픽바이오의 핵심기술은 그 자체로 설비투자 및 비용 부담이 상대적으로 적을 뿐 아니라 처리가 어려운 폐기물들을 주된 대상으로하고 있어 그 자체로 경제성을 확보, 사업적인 가치가 높습니다.</p>
+                        </li>
+                </ul>
+            </div>
+            <p class="web"></p>
+        </section>
+
+        <section id="propose" class="web">
+            <h1>WHAT WE PROPOSE</h1>
+            <div class="wrapper">
+                <div id="propose_contents">
+                    <ul>
+                        <li class="on">
+                            <p>
+                                보일러, 엔진 등 기존 산업 설비에 추가 투자 없이 가격 경쟁력 있는<br/>
+                                친환경 연료를 적용함으로써
+                                미세먼지, 이산화탄소 등 환경유해물질<br />배출을 최소화하는 한편, 효율을 극대화합니다.
+                            </p>
+                        </li>
+                        <li>
+                            <p>
+                               보일러, 엔진 등 기존 산업 설비에 추가 투자 없이 가격 경쟁력 있는<br/>
+                               친환경 연료를 적용함으로써
+                               미세먼지, 이산화탄소 등 환경유해물질<br />배출을 최소화하는 한편, 효율을 극대화합니다.
+                        </li>
+                        <li>
+                            <p>
+                                가격 경쟁력 있는 친환경 연료와 기존 선박용 화석연료를<br/>
+                                혼합함으로써 황, 질소 등 환경유해 물질이 줄어든 친환경 고품질의<br/>
+                                연료로 활용 가능하며, 엔진 효율을 획기적으로 개선합니다.
+                            </p>
+                        </li>
+                        <li>
+                            <p>
+                                화석연료 제품 사용에 따른 황/질소화합물 등 환경유해물질을<br/>
+                                최소화하는 한편, 노후화된 엔진의 효율, 출력을 획기적으로 증대,<br/>
+                                미세먼지 등의 발생을 억제합니다.</p>
+                        </li>
+                    </ul>
+                </div>
+                <div id="propose_thumb">
+                    <ul>
+                        <li>
+                            <a href="#">
+                                <p></p>
+                                <p>산업용</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <p></p>
+                                <p>발전용</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <p></p>
+                                <p>선박용</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <p></p>
+                                <p>차량용</p>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="propose_m" class="mobile">
+            <h1>WHAT WE PROPOSE</h1>
+            <div class="wrapper">
+                <div id="propose_contents_m">
+                    <ul>
+                        <li class="on">
+                            <p>
+                                보일러, 엔진 등 기존 산업 설비에추가 투자 없이 가격 경쟁력 있는 친환경 연료를 적용함으로써 미세먼지, 이산화탄소 등 환경유해물질배출을 최소화하는 한편, 효율을 극대화합니다.
+                            </p>
+                        </li>
+                        <li>
+                            <p>
+                               보일러, 엔진 등 기존 산업 설비에 추가 투자 없이 가격 경쟁력 있는 친환경 연료를 적용함으로써 미세먼지, 이산화탄소 등 환경유해물질 배출을 최소화하는 한편, 효율을 극대화합니다.
+                        </li>
+                        <li>
+                            <p>
+                                가격 경쟁력 있는 친환경 연료와 기존 선박용 화석연료를 혼합함으로써 황, 질소 등 환경유해 물질이 줄어든 친환경 고품질의 연료로 활용 가능하며, 엔진 효율을 획기적으로 개선합니다.
+                            </p>
+                        </li>
+                        <li>
+                            <p>
+                                화석연료 제품 사용에 따른 황/질소화합물 등 환경유해물질을 최소화하는 한편, 노후화된 엔진의 효율, 출력을 획기적으로 증대, 미세먼지 등의 발생을 억제합니다.
+                              </p>
+                        </li>
+                    </ul>
+                </div>
+                <div id="propose_thumb_m">
+                    <ul>
+                        <li>
+                            <a href="#">
+                                <p>산업용</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <p>발전용</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <p>선박용</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <p>차량용</p>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="focus" class="web">
+            <h1>WHAT WE FOCUS</h1>
+            <ul>
+                <li>
+                   <div>
+                      <p></p>
+                      <p>차별화된 제품 솔루션</p>
+                   </div>
+                   <ul>
+                      <li>경제적 가치가 높은 제품/솔루션 공급</li>
+                      <li>환경친화적 가치를 극대화한 제품/솔루션 공급</li>
+                      <li>고객 needs에 맞는 맞춤형 제품/솔루션 공급</li>
+                   </ul>
+                </li>
+                <li>
+                   <div>
+                      <p></p>
+                      <p>선도적인 기술역량</p>
+                   </div>
+                   <ul>
+                      <li>각종 부산물 및 오염 정도가 높은 폐기물 원재료 활용</li>
+                      <li>처리비 절감, 재활용 등을 통한 효율 극대화</li>
+                      <li>차별화된 대체 에너지 제품 및 솔루션 개발</li>
+                   </ul>
+                </li>
+                <li>
+                   <div>
+                      <p></p>
+                      <p>원재료 소싱 네트워크</p>
+                   </div>
+                   <ul>
+                      <li>동남아, 중국 등 주요국 내 지역별 거점 활용</li>
+                      <li>현지 네트워크 확대 및 파트너쉽 강화</li>
+                      <li>기술제휴 등을 통한 상생의 value chain 구축</li>
+                   </ul>
+                </li>
+            </ul>
+        </section>
+
+        <section id="focus_m" class="mobile">
+            <h1>WHAT WE FOCUS</h1>
+            <ul>
+                <li>
+                   <div>
+                      <p></p>
+                      <p>차별화된 제품 솔루션</p>
+                   </div>
+                   <ul>
+                      <li>경제적 가치가 높은 제품/솔루션 공급</li>
+                      <li>환경친화적 가치를 극대화한 제품/솔루션 공급</li>
+                      <li>고객 needs에 맞는 맞춤형 제품/솔루션 공급</li>
+                   </ul>
+                </li>
+                <li>
+                   <div>
+                      <p></p>
+                      <p>선도적인 기술역량</p>
+                   </div>
+                   <ul>
+                      <li>각종 부산물 및 오염 정도가 높은 폐기물 원재료 활용</li>
+                      <li>처리비 절감, 재활용 등을 통한 효율 극대화</li>
+                      <li>차별화된 대체 에너지 제품 및 솔루션 개발</li>
+                   </ul>
+                </li>
+                <li>
+                   <div>
+                      <p></p>
+                      <p>원재료 소싱 네트워크</p>
+                   </div>
+                   <ul>
+                      <li>동남아, 중국 등 주요국 내 지역별 거점 활용</li>
+                      <li>현지 네트워크 확대 및 파트너쉽 강화</li>
+                      <li>기술제휴 등을 통한 상생의 value chain 구축</li>
+                   </ul>
+                </li>
+            </ul>
+        </section>
+        <div id="bottom_bg">
+            <p></p>
+            <p></p>
+            <p></p>
+        </div>
+    </main>
+
+    <footer>
+        <div>
+            <dl>
+                <dt class="hidden">유틸메뉴</dt>
+                <dd>
+                    <a href="#">웹접근성 안내</a>
+                </dd>
+                <dd>
+                    <a href="subpage/company.html">회사소개</a>
+                </dd>
+                <dd>
+                    <a href="subpage/business.html">사업소개</a>
+                </dd>
+                <dd>
+                    <a href="subpage/invest.html">투자정보</a>
+                </dd>
+                <dd>
+                    <a href="subpage/notice.html">공지사항</a>
+                </dd>
+                <dd>
+                    <a href="subpage/contact.html">CONTACT</a>
+                </dd>
+            </dl>
+        </div>
+        <address>
+            <p>COPYRIGHT 2016@PACIFICBIO. ALL RIGHTS RESERVED.</p>
+        </address>
+
+    </footer>
+</body>
+</html>

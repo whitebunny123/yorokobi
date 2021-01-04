@@ -1,0 +1,25 @@
+@font-face{
+    font-family:"whitecat";
+    src:url(../font/whitecat/HoonWhitecatR.eot);
+    src:local(※), url(../font/whitecat/HoonWhitecatR.ttf) format('trueType'), url(../font/whitecat/HoonWhitecatR.woff) format('woff');
+}
+
+
+@font-face{
+    font-family:"thousand";
+    src:url(../font/thousand/thousandB.eot);
+    src:local(※), url(../font/thousand/thousandB.ttf) format('trueType'), url(../font/thousand/thousandB.woff) format('woff');
+}
+/*
+@font-face{
+    font-family:"sky";
+    src:url(../font/DXMH/DXCSB-KSCpc-EUC-H.eot);
+    src:local(※), url(../font/DXMH/DXCSB-KSCpc-EUC-H.ttf) format('trueType'), url(../font/DXMH/DXCSB-KSCpc-EUC-H.woff) format('woff');
+
+}
+@font-face{
+    font-family:"pencil";
+    src:url(../font/Hoon/HoonMakdaeyunpilR.eot);
+    src:local(※), url(../font/Hoon/HoonMakdaeyunpilR.ttf) format('trueType'), url(../font/Hoon/HoonMakdaeyunpilR.woff) format('woff');
+}
+*/

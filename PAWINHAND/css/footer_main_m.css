@@ -1,0 +1,24 @@
+footer{
+    margin-top:1px;
+    box-sizing: border-box;
+    padding-top:3.5vw;
+    height:14vw;
+    font-family: "thousand";
+    font-size:1.8vw;
+    background: rgba(0,0,0,0.4);
+    color:white;
+    text-align: center;
+}
+
+footer>address{}
+footer>address>p{}
+footer>address>p>i{}
+footer>address>div{
+    display: flex;
+    justify-content: space-between;
+    margin: 2.5vw auto 0;
+    width:75vw;
+}
+footer>address>div>p{
+    flex: 1 0 50%;
+}

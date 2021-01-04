@@ -1,0 +1,88 @@
+main{
+    padding-top:1px;/*#banner와 마진병합 방지*/
+    height:1109px;
+    font-family:"whitecat";
+    color:rgba(255,255,255,1);
+}
+
+
+
+#banner_w{
+    position: relative;
+    margin:100px auto 0;
+    width:1500px;
+    height:720px;
+}
+#banner_w>h1{}
+#banner_w>p.btn{
+    position: absolute;
+    top:365px;
+    font-size: 72px;
+    cursor: pointer;
+}
+
+p#btn_left{
+    left:-100px;
+}
+p#btn_right{
+    right:-100px;
+}
+#banner_w>ul{
+    position: relative;
+    width:1500px;
+    height:720px;
+}
+#banner_w>ul>li{
+    position: absolute;
+    left:0; top:0;
+    width:1500px;
+    height:720px;
+    box-sizing: border-box;
+}
+#banner_w>ul>li>p{}
+#banner_w>ul>li>p>span{}
+
+#banner_w>ul>li:nth-of-type(1){
+    line-height: 88px;
+    font-size:48px;
+    background: url(../imgs/main/banner/banner_hug.png) no-repeat 780px 20px/670px;
+}
+#banner_w>ul>li:nth-of-type(1)>p{
+    padding: 300px 0 0 20px;
+}
+#banner_w>ul>li:nth-of-type(1)>p>span{
+    font-size:88px;
+}
+#banner_w>ul>li:nth-of-type(3){
+    display: none;
+    background: url(../imgs/main/banner/banner_dog.png) no-repeat 50px 80px/500px;
+    text-align: right;
+    font-size: 54px;
+}
+#banner_w>ul>li:nth-of-type(3)>p{
+    padding: 325px 80px 0 0;
+    line-height: 92px;
+}
+#banner_w>ul>li:nth-of-type(3)>p>span{
+    font-size: 92px;
+}
+#banner_w>ul>li:nth-of-type(2){
+    display: none;
+    background: url(../imgs/main/banner/banner_cat.png) no-repeat 70px 25px/430px;
+    text-align: right;
+}
+#banner_w>ul>li:nth-of-type(2)>p{
+    font-size: 64px;
+    padding-right:30px;
+}
+#banner_w>ul>li:nth-of-type(2)>p:nth-of-type(1){
+    padding-top: 280px;
+}
+#banner_w>ul>li:nth-of-type(2)>p:nth-of-type(1)>span{
+    font-size: 120px;
+}
+#banner_w>ul>li:nth-of-type(2)>p:nth-of-type(2){
+    margin-top: 20px;
+    font-size: 28px;
+}
+#banner_w>ul>li:nth-of-type(2)>p:nth-of-type(2)>span{}

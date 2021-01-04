@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/company.css">
+  <link rel="stylesheet" href="css/footer.css">
+  <link rel="stylesheet" media="only screen and (min-width:981px)" href="css/header(web).css">
+  <link rel="stylesheet" media="only screen and (max-width:980px)" href="css/header(mobile).css">
+  <link rel="stylesheet" type="text/css" href="../XEIcon-2.2.0/xeicon.min.css">
+  <script   src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="   crossorigin="anonymous"></script>
+  <script>
+      $(function(){
+
+        $("#go_top").click(function(e){
+                e.preventDefault();
+
+            $("html, body").animate({"scrollTop":0}, 500, function(){});
+        });
+
+          
+        $(window).scroll(function(){
+
+          var top=$(window).scrollTop();
+          if(top>10){
+              $("header").addClass("on");
+              $("#nav").addClass("on");
+              $("#go_top").css({"display":"block"}).find("i").css({"transform":"rotate(180deg)"}).parents("p");
+          }else{
+              $("header").removeClass("on");
+              $("#nav").removeClass("on");
+              $("#go_top").css({"display":"none"});
+          }
+        });
+
+        $("#nav_btn").click(function(){
+            $("#nav").css({"display":"block","opacity":"1"});
+        });
+
+        $("#nav").children("p").click(function(e){
+            e.preventDefault();
+            $("#nav").css({"display":"none","opacity":"0"});
+        });
+
+          var idx=5;
+
+          $("#history>div.list").find("li").click(function(){
+            $(this).addClass("on").css({"opacity":"0.5"}).animate({"opacity":1},500,function(){}).siblings().removeClass("on");
+
+            idx = $(this).index();
+            $("#history").children("div.year").eq(idx).css({"opacity":"0.8"}).addClass("on").animate({"opacity":1},800,function(){}).siblings().removeClass("on");
+
+            change(idx);
+
+          });
+
+          function change(idx){
+              if(idx==0){
+                $("#change").css({"left":"13.5417vw", "top":"22.8125vw"});
+            }else if(idx==1){
+                $("#change").css({"left":"23.28125vw", "top":"18.64583vw"});
+            }else if(idx==2){
+                $("#change").css({"left":"32.864583vw", "top":"25.72917vw"});
+            }else if(idx==3){
+                $("#change").css({"left":"42.5521vw", "top":"6.14583vw"});
+            }else if(idx==4){
+                $("#change").css({"left":"52.1354vw", "top":"12.34375vw"});
+            }else if(idx==5){
+                $("#change").css({"left":"61.77083vw", "top":"5.10417vw"});
+            };
+          };
+
+
+          $("div.list").children("p").eq(0).click(function(){
+
+              idx--;
+              if(idx<0){
+                  idx=0;
+              }
+              $("#history").children("div.year").eq(idx).css({"opacity":"0.8"}).addClass("on").animate({"opacity":1},800,function(){}).siblings().removeClass("on");
+
+              change(idx);
+
+              $("#history>div.list").find("li").eq(idx).addClass("on").siblings().removeClass("on");
+          });
+          
+          $("div.list").children("p").eq(0).mousedown(function(){
+            $(this).addClass("on").siblings("p").removeClass("on")  
+          });
+          
+          $("div.list").children("p").eq(0).mouseup(function(){
+            $(this).removeClass("on");
+          });
+
+          $("div.list").children("p").eq(1).click(function(){
+             
+
+              idx++;
+              if(idx>5){
+                  idx=5;
+              };
+              $("#history").children("div.year").eq(idx).css({"opacity":"0.8"}).addClass("on").animate({"opacity":1},800,function(){}).siblings().removeClass("on");
+
+              change(idx);
+
+              $("#history>div.list").find("li").eq(idx).addClass("on").siblings().removeClass("on");
+          });
+          
+           $("div.list").children("p").eq(1).mousedown(function(){
+            $(this).addClass("on").siblings("p").removeClass("on")  
+          });
+          
+          $("div.list").children("p").eq(1).mouseup(function(){
+            $(this).removeClass("on");
+          });
+
+          
+      });
+  </script>
+  <title>Document</title>
+</head>
+<body>
+ 
+  <p id="go_top">
+    <a href="#">
+       <i class="xi-angle-down-thin"></i>
+    </a>
+  </p>
+ 
+  <header>
+    <p id="logo"><a href="../index.html"></a></p>
+    <div id="nav_btn">
+        <p></p>
+    </div>
+    <nav id="nav">
+     <h1 class="hidden">네비게이터</h1>
+     <p>
+         <a href="#">
+            <span class="hidden">닫기버튼</span>
+         </a>
+     </p>
+     <dl>
+         <dt>Introduction</dt>
+         <dd><a href="company.html">회사소개</a></dd>
+         <dd><a href="business.html">사업소개</a></dd>
+     </dl>
+     <dl>
+         <dt>Information</dt>
+         <dd><a href="invest.html">투자정보</a></dd>
+         <dd><a href="notice.html">공지사항</a></dd>
+         <dd><a href="contact.html">CONTACT</a></dd>
+     </dl>
+     <dl>
+         <dt class="hidden">언어선택</dt>
+         <dd><a href="#">KOR</a></dd>
+         <dd><a href="#">ENG</a></dd>
+     </dl>
+    </nav><!--nav END-->
+  </header>
+  <main>
+    <section id="title">
+      <h1>회사소개</h1>
+      <p>
+        뛰어난 기술력을 기반으로 친환경 가치를 경쟁요소로 하는<br/>
+        친환경 에너지 산업의 혁신을 주도하는 친환경 기술 전문 기업입니다.
+      </p>
+    </section>
+
+    <section id="summary">
+        <h1>회사개요</h1>
+        <div class="left">
+            <ul>
+              <li>
+                  <p>대표이사</p>
+                  <p>신동희</p>
+              </li>
+              <li>
+                  <p>상장일</p>
+                  <p>2002.09.17</p>
+              </li>
+              <li>
+                  <p>자본금</p>
+                  <p>83억</p>
+              </li>
+            </ul>
+        </div>
+        <div class="right">
+            <ul>
+              <li>
+                  <p>임직원수</p>
+                  <p>32명</p>
+              </li>
+              <li>
+                  <p>설립일</p>
+                  <p>1997.02.28</p>
+              </li>
+              <li>
+                  <p>업종</p>
+                  <p>제조업, 도소매</p>
+              </li>
+            </ul>
+        </div>
+    </section>
+
+    <section id="history">
+      <h1>회사연혁</h1>
+      <p id="change"></p>
+      <div class="list">
+          <p><i class="xi-angle-left"></i></p>
+          <ul>
+              <li>2012</li>
+              <li>2013</li>
+              <li>2014</li>
+              <li>2015</li>
+              <li>2016</li>
+              <li class="on">2017</li>
+          </ul>
+          <p><i class="xi-angle-right"></i></p>
+      </div>
+      
+      <div class="year" id="h_2012">
+          <time datetime="2012" class="hidden">2012</time>
+          <div class="wrapper">
+              <ul>
+                  <li>
+                    <time datetime="2012-10">10월</time>
+                    <p>한국중부발전 주관 생산 및 연소시연 행사</p>
+                  </li>
+                  <li>
+                    <time datetime="2012-08">08월</time>
+                    <p>㈜정진공영 인수</p>
+                  </li>
+                  <li class="ul">
+                    <time datetime="2012-03">03월</time>
+                    <ul>
+                        <li>
+                            한국중부발전과 물품공급을 위한 양해각서체결
+                        </li>
+                        <li>
+                            한국서부발전과 물품공급을 위한 양해각서체결
+                        </li>
+                        <li>전력연구원 기술검토</li>
+                    </ul>
+                  </li>
+              </ul>
+          </div>
+      </div>
+      
+      <div class="year" id="h_2013">
+          <time datetime="2013" class="hidden">2013</time>
+          <div class="wrapper">
+              <ul>
+                  <li>
+                    <time datetime="2013-10">10월</time>
+                    <p>
+                        석유정제업 등록오일필드와 벙커C유 물품공급계약 체결
+                    </p>
+                  </li>
+                  <li>
+                    <time datetime="2013-09">09월</time>
+                    <p>석유정제업 면허 취득</p>
+                  </li>
+                  <li>
+                    <time datetime="2013-08">08월</time>
+                    <p>
+                        바이오중유,신재생에너지의 무할당제(RPS) 적용대상 에너지원확인(산업통상자원부)
+                    </p>
+                  </li>
+                  <li class="ul two">
+                    <time datetime="2013-07">07월</time>
+                    <ul>
+                        <li>
+                            덕분오일로부터 석유정제공장, 설치 및 일체의 생산시설 등 취득
+                        </li>
+                        <li>
+                            덕분오일 인수합병
+                        </li>
+                    </ul>
+                  </li>
+              </ul>
+          </div>
+      </div>
+      
+      <div class="year" id="h_2014">
+          <time datetime="2014" class="hidden">2014</time>
+          <div class="wrapper">
+              <ul>
+                  <li>
+                    <time datetime="2014-04">04월</time>
+                    <p>동서발전 발전용 바이오중유 2차 입찰 전량 수주</p>
+                  </li>
+                  <li class="ul two">
+                    <time datetime="2014-03">03월</time>
+                    <ul>
+                        <li>
+                            동서발전 발전용 바이오중유 1차 입찰 전량 수주
+                        </li>
+                        <li>
+                            산업통상자원부 발전용 바이오중유 생산업자 지정 및 공급 개시
+                        </li>
+                    </ul>
+                  </li>
+                  <li>
+                    <time datetime="2014-01">01월</time>
+                    <p>사명 변경(에어파크 → 엘에너지)</p>
+                  </li>
+              </ul>
+          </div>
+      </div>
+      
+      <div class="year" id="h_2015">
+          <time datetime="2015" class="hidden">2015</time>
+          <div class="wrapper">
+              <ul>
+                  <li>
+                    <time datetime="2015-12">12월</time>
+                    <p>서부발전 발전용 바이오중유 입찰 수주</p>
+                  </li>
+                  <li>
+                    <time datetime="2015-11">11월</time>
+                    <p>한국지역난방공사 발전용 바이오중유 입찰 전량 수주</p>
+                  </li>
+                  <li class="ul two">
+                    <time datetime="2015-10">10월</time>
+                    <ul>
+                        <li>동서발전 발전용 바이오중유 입찰 수주</li>
+                        <li>동, 식물성 지방산, 지방산 글리세라이드 또는 이들의 혼합물의 상온유동성 개선방법 특허출원</li>
+                    </ul>
+                  </li>
+                  <li class="ul two">
+                    <time datetime="2015-07">07월</time>
+                    <ul>
+                        <li>남부발전 발전용 바이오중유 입찰 수주</li>
+                        <li>남부발전 발전용 바이오중유 입찰 수주</li>
+                    </ul>
+                  </li>
+                  <li>
+                    <time datetime="2015-06">06월</time>
+                    <p>대표이사 변경(김태훈→장운덕)</p>
+                  </li>
+                  <li>
+                    <time datetime="2015-05">05월</time>
+                    <p>사명 변경(엘에너지→퍼시픽바이오)</p>
+                  </li>
+                  <li>
+                    <time datetime="2015-03">03월</time>
+                    <p>
+                        최대주주 변경(글로벌통상 외4인→씨피파트너스 제1호 사모투자전문회사) (주) 정진공영 매각,<br/>(주)위더스이엔지 매각
+                    </p>
+                  </li>
+              </ul>
+          </div>
+      </div>
+      
+      <div class="year" id="h_2016">
+          <time datetime="2016" class="hidden">2016</time>
+          <div class="wrapper">
+              <ul>
+                  <li class="ul two">
+                    <time datetime="2016-11">11월</time>
+                    <ul>
+                        <li>동서발전 발전용 바이오 중유 입찰 수주</li>
+                        <li>대표이사 변경(장운덕→김진걸)</li>
+                    </ul>
+                  </li>
+                  <li>
+                    <time datetime="2016-08">08월</time>
+                    <p>동서발전 발전용 바이오 중유 입찰 수주</p>
+                  </li>
+                  <li>
+                    <time datetime="2016-04">04월</time>
+                    <p>동서발전 발전용 바이오 중유 입찰 수주</p>
+                  </li>
+                  <li>
+                    <time datetime="2016-01">01월</time>
+                    <p>동서발전 발전용 바이오 중유 입찰 수주</p>
+                  </li>
+              </ul>
+          </div>
+      </div>
+      
+      <div class="year on" id="h_2017">
+          <time datetime="2017" class="hidden">2017</time>
+          <div class="wrapper">
+              <ul>
+                  <li class="ul three">
+                    <time datetime="2017-11">11월</time>
+                    <ul>
+                        <li>동서발전 발전용 바이오중유 입찰 수주</li>
+                        <li>대표이사 변경(정필묵→박정원)</li>
+                        <li>
+                           한국지역난방공사 발전용 바이오중유 입찰 수주
+                        </li>
+                    </ul>
+                  </li>
+                  <li>
+                    <time datetime="2017-10">10월</time>
+                    <p>동, 식물성 지방산, 지방산 글리세라이드 또는 이들의 혼합물의 유동성 개선용 첨가제 조성물 특허등록</p>
+                  </li>
+                  <li>
+                    <time datetime="2017-06">06월</time>
+                    <p>동서발전 발전용 바이오중유 입찰 수주</p>
+                  </li>
+                  <li>
+                    <time datetime="2017-03">03월</time>
+                    <p>
+                        동, 식물성 지방산, 지방산 글리세라이드 또는 이들의 혼합물의 상온 유동선 개선방법 특허등록
+                    </p>
+                  </li>
+                  <li class="ul two">
+                    <time datetime="2017-02">02월</time>
+                    <ul>
+                        <li>동서발전 발전용 바이오 중유 입찰 수주</li>
+                        <li>대표이사 변경(김진걸→정필묵)</li>
+                    </ul>
+                  </li>
+              </ul>
+          </div>
+      </div>
+    </section>
+  
+  </main>
+  <footer>
+      <div>
+          <dl>
+              <dt class="hidden">유틸메뉴</dt>
+              <dd>
+                  <a href="#">웹접근성 안내</a>
+              </dd>
+              <dd>
+                  <a href="company.html">회사소개</a>
+              </dd>
+              <dd>
+                  <a href="business.html">사업소개</a>
+              </dd>
+              <dd>
+                  <a href="invest.html">투자정보</a>
+              </dd>
+              <dd>
+                  <a href="notice.html">공지사항</a>
+              </dd>
+              <dd>
+                  <a href="contact.html">CONTACT</a>
+              </dd>
+          </dl>
+      </div>
+      <address>
+          <p>COPYRIGHT 2016@PACIFICBIO. ALL RIGHTS RESERVED.</p>
+      </address>
+
+  </footer>
+</body>
+</html>

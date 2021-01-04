@@ -1,0 +1,266 @@
+@font-face{
+    font-family:"youth";
+    src:url(../../font/Youth.eot);
+    src:local(※), url(../../font/Youth.woff) format('woff'), url(../../font/Youth.ttf) format('trueType');
+    font-weight:normal;
+    font-style:normal;
+
+}
+
+
+
+body{
+    font-family: "youth";
+  }
+
+p#go_top{
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    left:93%;
+    bottom:1.875vw;
+    box-sizing: border-box;
+    padding-top:0.104167vw;
+    width:3.64583vw;
+    height:3.64583vw;
+    border: 0.10417vw solid #E2E2E2;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.8);
+    line-height: 3.64583vw;
+    text-align: center;
+}
+p#go_top>a{
+    display: block;
+    font-size: 1.67vw;
+    color:#e2e2e2;
+}
+p#go_top>a>i{}
+
+header{
+  padding-top:2.083vw;
+  width:100vw;
+  height:9.0625vw;
+}
+
+header>p#logo{
+  display: block;
+  float: left;
+  margin-left: 3.6979vw;
+  width:5.72917vw; height:6.77083vw;
+  background: url(../../imgs/header/headertop/pacificBIO.png) no-repeat 0 / 100%;
+}
+header>p#logo>a{
+    display: block;
+    width:5.72917vw;
+    height:6.77083vw;
+}
+header>div#nav_btn{
+    float:right;
+    margin:1.9271vw 4.84375vw 0 0;
+    padding-top:1.35417vw;
+    width:3.177083vw;
+    height:1.71875vw;
+    cursor: pointer;
+}
+
+header>div#nav_btn>p{
+    position: relative;
+    width:3.177083vw;
+    height:1px;
+    background: #666666;
+}
+
+header>div#nav_btn>p:before{
+    content: "";
+    position: absolute;
+    bottom:-1.354167vw;
+    width:3.177083vw;
+    height:1px;
+    background: #666666;
+}
+
+header>div#nav_btn>p:after{
+    content: "";
+    position: absolute;
+    top:-1.354167vw;
+    width:3.177083vw;
+    height:1px;
+    background: #666666;
+}
+
+/*스크롤시*/
+
+header.on{
+    position:fixed;
+    z-index: 500;
+    padding-top:0;
+    width:100%;
+    height:6.25vw;
+    background: rgba(255,255,255,0.8);
+    border-bottom: 1px solid #f4f4f4;
+    transition: all 0.3s ease;
+}
+
+header.on>p#logo{
+  display: block;
+  float: left;
+  margin: 1vw 0 0 1.5625vw;
+  width:3.90625vw;
+  height:4.427083vw;
+  background: url(../../imgs/header/headertop/pacificBIO_s.png) no-repeat 0 / 100%;
+}
+header.on>p#logo>a{
+    display: block;
+    width:3.90625vw;
+    height:4.427083vw;
+    margin-left:0.3125vw;
+}
+header.on>div#nav_btn{
+    float:right;
+    margin: 1.67vw 2.60417vw 0 0;
+    padding-top:1px;
+    width:2.13541vw;
+    height:1.822917vw;
+    cursor: pointer;
+}
+
+header.on>div#nav_btn>p{
+    position: relative;
+    width:2.65625vw;
+    height:1px;
+    margin-top:1.302vw;
+    background: #939393;
+}
+
+header.on>div#nav_btn>p:before{
+    content: "";
+    position: absolute;
+    bottom:-1.09375vw;
+    width:2.65625vw;
+    height:1px;
+    background: #939393;
+}
+
+header.on>div#nav_btn>p:after{
+    content: "";
+    position: absolute;
+    top:-1.09375vw;
+    width:2.65625vw;
+    height:1px;
+    background: #939393;
+}
+
+/*네비게이터*/
+
+#nav{
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    right:0; top:0;
+    clear:both;
+    width:50vw;
+    height: 100vh;
+    padding-top:3.9583vw;
+    box-sizing: border-box;
+    background: rgba(255,255,255,0.95);
+    transition: all 0.3s ease;
+}
+
+#nav>p{
+    width:2.86458vw;
+    height:2.86458vw;
+    float:right;
+    margin-right: 4.0625vw;
+    background: url(../../imgs/header/nav/close_button.png) no-repeat 0 0/contain;
+}
+
+#nav.on{
+    padding-top:1.8229vw;
+}
+#nav.on>p{
+    width:2.604167vw;
+    height:2.604167vw;
+    float:right;
+    margin-right: 2.083vw;
+}
+#nav>p>a{
+    display: block;
+    width:2.604167vw;
+    height:2.604167vw;
+}
+
+#nav>dl{
+    margin-left: 7.60417vw;
+}
+#nav>dl>dt{
+    padding-bottom: 1.30208vw;
+    font-size: 2.5vw;
+    line-height: 2.5vw;
+    color: #889C9E;
+}
+#nav>dl>dd{
+    font-size:0.83vw;
+}
+
+#nav>dl:not(:nth-of-type(3))>dd{
+    line-height: 2.60417vw;
+    margin-left: 1.04167vw;
+}
+
+#nav>dl>dd>a{
+    color: #7BADAC;
+
+}
+
+#nav>dl:nth-of-type(1){
+    margin-top: 2.1875vw;
+}
+#nav>dl:nth-of-type(1)>dt{
+    position: relative;
+}
+#nav>dl:nth-of-type(1)>dt:before{
+    content: "";
+    position: absolute;
+    left:-3.072917vw; top:-0.36458vw;
+    width:2.34375vw; height:2.34375vw;
+    background: url(../../imgs/header/nav/leaf1.png) no-repeat 0 0;
+}
+#nav>dl:nth-of-type(1)>dd{}
+#nav>dl:nth-of-type(1)>dd:nth-of-type(2){
+    margin-bottom: 5.3125vw;
+}
+#nav>dl:nth-of-type(1)>dd>a{}
+
+#nav>dl:nth-of-type(2){}
+#nav>dl:nth-of-type(2)>dt{
+    position: relative;
+}
+#nav>dl:nth-of-type(2)>dt:before{
+    content: "";
+    position: absolute;
+    left:-3.072917vw; top:-0.36458vw;
+    width:2.34375vw; height:2.34375vw;
+    background: url(../../imgs/header/nav/leaf2.png) no-repeat 0 0;
+}
+#nav>dl:nth-of-type(2)>dd{}
+#nav>dl:nth-of-type(2)>dd:last-child{
+    margin-bottom: 3.64583vw;
+}
+#nav>dl:nth-of-type(2)>dd>a{}
+
+#nav>dl:nth-of-type(3){
+    margin-left: 7.2917vw;
+    height:1.4583vw;
+}
+#nav>dl:nth-of-type(3)>dd{
+    float:left;
+    width:2.96875vw; height:1.4583vw;
+    margin-left: 0.260417vw;
+    margin-right: 0.885417vw;
+    line-height: 1.4583vw;
+    text-align: center;
+    background: #D1E3E8;
+}
+#nav>dl:nth-of-type(3)>dd>a{
+    color:white;
+}

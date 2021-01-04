@@ -1,0 +1,89 @@
+main>section:first-of-type{
+  width:1920px;
+  height:800px;
+  padding:250px 0 0 234px;
+  box-sizing: border-box;
+  color:white;
+  text-align: left;
+  background: url(../imgs/contact/phone.png) no-repeat 0 0;
+}
+
+/*타이틀*/
+main>section:first-of-type>h1{
+  font-size:42px;
+}
+
+main>section:first-of-type>p{
+  margin-top:40px;
+  font-size: 32px;
+  line-height: 38px;
+}
+
+#info{
+    margin: 0 auto;
+    width:1320px;
+    height:1800px;
+}
+#info>h1{}
+#info>div{
+    margin-top: 250px;
+    height:520px;
+}
+
+#info>div{
+    display: flex;
+    justify-content: space-between;
+}
+#info>div>div.text{
+    flex: 1 0 600px;
+}
+#info>div>div.text>h2{
+    font-size:42px;
+    color:#007082;
+    margin-bottom: 95px;
+}
+#info>div>div.text>ul{
+
+}
+#info>div>div.text>ul>li{
+    display: flex;
+    justify-content: space-between;
+    height: 100px;
+    line-height: 28px;
+}
+#info>div>div.text>ul>li>p{
+    flex: 1 0 140px;
+    font-size:26px;
+    color:#22878c;
+}
+#info>div>div.text>ul>li>address{
+    flex: 1 0 460px;
+    font-size: 20px;
+    color:#5cb7b5;
+}
+#info>div>div.map{
+    flex: 1 0 720px;
+    height:540px;
+}
+
+#info>div#h_office{}
+#info>div#h_office>h2{}
+#info>div#h_office>div{}
+#info>div#h_office>div.text{}
+#info>div#h_office>div.text>ul{}
+#info>div#h_office>div.text>ul>li{}
+#info>div#h_office>div.text>ul>li>p{}
+#info>div#h_office>div.text>ul>li>address{}
+#info>div#h_office>div.map{}
+
+#info>div#factory{}
+#info>div#factory>div{}
+#info>div#factory>div.text{
+  padding-left: 65px;
+}
+#info>div#factory>div.text>h2{}
+#info>div#factory>div.text>ul{}
+#info>div#factory>div.text>ul>li{}
+#info>div#factory>div.text>ul>li>p{}
+#info>div#factory>div.text>ul>li>address{}
+#info>div#factory>div.map{}

@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/business.css">
+  <link rel="stylesheet" href="css/footer.css">
+  <link rel="stylesheet" media="only screen and (min-width:981px)" href="css/header(web).css">
+  <link rel="stylesheet" media="only screen and (max-width:980px)" href="css/header(mobile).css">
+  <link rel="stylesheet" type="text/css" href="../XEIcon-2.2.0/xeicon.min.css">
+  <script   src="https://code.jquery.com/jquery-3.4.1.min.js"   integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="   crossorigin="anonymous"></script>
+  <script>
+      $(function(){
+
+        $("#go_top").click(function(e){
+                e.preventDefault();
+
+            $("html, body").animate({"scrollTop":0}, 500, function(){});
+        });
+
+          
+        $(window).scroll(function(){
+
+          var top=$(window).scrollTop();
+          if(top>10){
+              $("header").addClass("on");
+              $("#nav").addClass("on");
+              $("#go_top").css({"display":"block"}).find("i").css({"transform":"rotate(180deg)"}).parents("p");
+          }else{
+              $("header").removeClass("on");
+              $("#nav").removeClass("on");
+              $("#go_top").css({"display":"none"});
+          }
+        });
+
+            $("#nav_btn").click(function(){
+                $("#nav").css({"display":"block","opacity":"1"});
+            });
+
+            $("#nav").children("p").click(function(e){
+                e.preventDefault();
+                $("#nav").css({"display":"none","opacity":"0"});
+            });
+          
+          $("#fuel").children("div.list").find("li").click(function(){
+              var idx = $(this).index();
+              
+             $("#fuel").find("div.content").find("li").css({"opacity":"0"}).eq(idx).addClass("on").siblings().removeClass("on").end().stop().animate({"opacity":"1"}, 500, function(){});
+          });
+          
+          $("#fuel").children("div.list").find("li").mouseenter(function(){
+              $(this).css({"opacity":"0.8"}).stop().animate({"opacity":"1"}, 500, function(){});
+          
+          });
+          
+            
+           $("#catalyst").find("div.list").find("li").click(function(){
+              var idx = $(this).index();
+              
+             $("#catalyst").find("div.content").find("li").css({"opacity":"0"}).eq(idx).addClass("on").siblings().removeClass("on").end().stop().animate({"opacity":"1"}, 500, function(){});
+          });
+          
+          $("#catalyst").find("div.list").find("li").mouseenter(function(){
+               $(this).css({"opacity":"0.8"}).stop().animate({"opacity":"1"}, 500, function(){});
+          
+          });
+          
+          
+          $("#garbage").children("div.wrapper").children("p").eq(0).mouseenter(function(){
+              $(this).animate({"left":"53px", "top":"52px"}, 300, function(){});
+          });
+          
+          $("#garbage").children("div.wrapper").children("p").eq(0).mouseleave(function(){
+              $(this).animate({"left":"56px", "top":"49px"}, 300, function(){});
+          });
+          
+           $("#garbage").children("div.wrapper").children("p").eq(1).mouseenter(function(){
+              $(this).animate({"left":"-10px", "bottom":"13px"}, 300, function(){});
+          });
+          
+          $("#garbage").children("div.wrapper").children("p").eq(1).mouseleave(function(){
+              $(this).animate({"left":"0", "bottom":"12px"}, 300, function(){});
+          });
+          
+          $("#garbage").children("div.wrapper").children("p").eq(2).mouseenter(function(){
+              $(this).animate({"left":"378px", "bottom":"81px"}, 300, function(){});
+          });
+          
+          $("#garbage").children("div.wrapper").children("p").eq(2).mouseleave(function(){
+              $(this).animate({"left":"374px", "bottom":"77px"}, 300, function(){});
+          });
+          
+           $("#garbage").children("div.wrapper").children("p").eq(3).mouseenter(function(){
+              $(this).animate({"right":"498px", "top":"187px"}, 300, function(){});
+          });
+          
+          $("#garbage").children("div.wrapper").children("p").eq(3).mouseleave(function(){
+              $(this).animate({"right":"502px", "top":"183px"}, 300, function(){});
+          });
+          
+          $("#garbage").children("div.wrapper").children("p").eq(4).mouseenter(function(){
+              $(this).animate({"right":"33px", "bottom":"-2px"}, 300, function(){});
+          });
+          
+          $("#garbage").children("div.wrapper").children("p").eq(4).mouseleave(function(){
+              $(this).animate({"right":"29px", "bottom":"0px"}, 300, function(){});
+          });
+          
+           $("#garbage").children("div.wrapper").children("p").eq(5).mouseenter(function(){
+              $(this).animate({"right":"-10px", "top":"-10px"}, 300, function(){});
+          });
+          
+          $("#garbage").children("div.wrapper").children("p").eq(5).mouseleave(function(){
+              $(this).animate({"right":"0px", "top":"0px"}, 300, function(){});
+          });
+         
+          $("#garbage").children("div.wrapper").children("p").mouseenter(function(){
+              $(this).removeClass("on");
+          });
+          
+      });
+  </script>
+  <title>Document</title>
+</head>
+<body>
+   <p id="go_top">
+    <a href="#">
+       <i class="xi-angle-down-thin"></i>
+    </a>
+  </p>
+  
+  <header>
+    <p id="logo"><a href="../index.html"></a></p>
+    <div id="nav_btn">
+        <p></p>
+    </div>
+    <nav id="nav">
+     <h1 class="hidden">네비게이터</h1>
+     <p>
+         <a href="#">
+            <span class="hidden">닫기버튼</span>
+         </a>
+     </p>
+     <dl>
+         <dt>Introduction</dt>
+         <dd><a href="company.html">회사소개</a></dd>
+         <dd><a href="business.html">사업소개</a></dd>
+     </dl>
+     <dl>
+         <dt>Information</dt>
+         <dd><a href="invest.html">투자정보</a></dd>
+         <dd><a href="notice.html">공지사항</a></dd>
+         <dd><a href="contact.html">CONTACT</a></dd>
+     </dl>
+     <dl>
+         <dt class="hidden">언어선택</dt>
+         <dd><a href="#">KOR</a></dd>
+         <dd><a href="#">ENG</a></dd>
+     </dl>
+    </nav><!--nav END-->
+  </header>
+  <main>
+    <section id="title">
+      <h1>사업소개</h1>
+      <p>
+        뛰어난 기술력을 기반으로 친환경 가치를 경쟁요소로 하는<br/>
+        친환경 에너지 산업의 혁신을 주도하는 친환경 기술 전문 기업입니다.
+      </p>
+    </section>
+
+    <section id="fuel">
+      <div class="wrapper">
+        <h1>바이오연료 사업</h1>
+        <p>당사는 동식물성 유지 부산물/폐기물, 폐유 등을 원료로
+          원가경쟁력이 있는<br />다양한 바이오연료 제품을 생산할
+          수 있습니다.</p>
+        <div class="content">
+            <ul>
+              <li class="on">중유 전량 대체 또는 중유와 혼합을 통한 저황유 생산 가능</li>
+              <li>경유 전량 대체 또는 경유와 혼합을 통한 저황유 생산 가능</li>
+              <li>우드펠렛, CNSC등 석탄과 혼소 가능</li>
+              <li>연료유 전량 대체 가능</li>
+              <li>혼합을 통한 BD규제 충족 가능</li>
+            </ul>
+        </div>
+      </div>
+
+      <div class="list">
+        <ul>
+          <li>바이오중유<br/>및 반제품</li>
+          <li>재생디젤<br/>및 반제품</li>
+          <li>정형/비정형<br/>고형 바이오연료</li>
+          <li>정제유 및<br/>정제유 반제품</li>
+          <li>바이오디젤<br/>및 반제품</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="catalyst">
+      <h1>친환경 에너지절감 촉매첨가제 사업</h1>
+      <p>당사는 환경 유해물질을 최소화함과 동시에
+        에너지 효율을 획기적으로<br/>높일 수 있는
+        다양한 촉매/첨가제 제품을 생산하고 있습니다.
+      </p>
+
+      <div class="wrapper">
+        <div class="list">
+          <ul>
+            <li>보일러용 첨가제</li>
+            <li>엔진용 첨가제</li>
+          </ul>
+        </div>
+
+        <div class="content">
+          <ul>
+            <li class="on">
+             <p>
+                고유황 중유 보일러, 저효율 중유 보일러, 석탄용 보일러
+                등의 스케일 제거 및 연소를 촉진함으로써 획기적인 효율 개선 및 SOx / NOx 등 대기오염 물질 발생 억제
+             </p>
+              
+            </li>
+            <li>
+             <p>
+               차량용, 선박용, 발전용 엔진의 파워와 효율을 향상시킴과 동시에 소음, 진동을 줄이고 대기오염물질 배출 최소화
+             </p>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+    </section>
+    <section id="garbage">
+      <h1>폐기물 재활용 및 바이오에너지 사업 솔루션</h1>
+      <p>
+        당사는 오랜 기간 축적된 폐기물 처리 경험 및 관련 기술/노하우를 토대로<br/>
+        재활용 및 바이오 에너지 사업 프로젝트를 추진하는 데 있어 핵심적인 기술들을 개발/보유 중이며,<br/>
+        이와 관련하여 차별화된 솔루션을 제공하고 있습니다.
+      </p>
+      <div class="wrapper">
+        <div class="list">
+          <ul>
+            <li>폐수 등 재활용 솔루션</li>
+            <li>
+              엔진발전, 바이오매스 등<br/>
+              바이오에너지 자원화 솔루션
+            </li>
+          </ul>
+        </div>
+        <p></p>
+        <p></p>
+        <p></p>
+        <p></p>
+        <p></p>
+        <p></p>
+      </div>
+    </section>
+  </main>
+  <footer>
+      <div>
+          <dl>
+              <dt class="hidden">유틸메뉴</dt>
+              <dd>
+                  <a href="#">웹접근성 안내</a>
+              </dd>
+              <dd>
+                  <a href="company.html">회사소개</a>
+              </dd>
+              <dd>
+                  <a href="business.html">사업소개</a>
+              </dd>
+              <dd>
+                  <a href="invest.html">투자정보</a>
+              </dd>
+              <dd>
+                  <a href="notice.html">공지사항</a>
+              </dd>
+              <dd>
+                  <a href="contact.html">CONTACT</a>
+              </dd>
+          </dl>
+      </div>
+      <address>
+          <p>COPYRIGHT 2016@PACIFICBIO. ALL RIGHTS RESERVED.</p>
+      </address>
+
+  </footer>
+</body>
+</html>

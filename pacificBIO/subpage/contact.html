@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/contact.css">
+  <link rel="stylesheet" href="css/footer.css">
+  <link rel="stylesheet" media="only screen and (min-width:981px)" href="css/header(web).css">
+  <link rel="stylesheet" media="only screen and (max-width:980px)" href="css/header(mobile).css">
+  <link rel="stylesheet" type="text/css" href="../XEIcon-2.2.0/xeicon.min.css">
+  <script   src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="   crossorigin="anonymous"></script>
+  <script>
+      $(function(){
+        $("#go_top").click(function(e){
+                e.preventDefault();
+
+                $("html, body").animate({"scrollTop":0}, 500, function(){});
+        });
+
+          
+        $(window).scroll(function(){
+
+          var top=$(window).scrollTop();
+          if(top>10){
+              $("header").addClass("on");
+              $("#nav").addClass("on");
+              $("#go_top").css({"display":"block"}).find("i").css({"transform":"rotate(180deg)"}).parents("p");
+          }else{
+              $("header").removeClass("on");
+              $("#nav").removeClass("on");
+              $("#go_top").css({"display":"none"});
+          }
+        });
+
+        $("#nav_btn").click(function(){
+            $("#nav").css({"display":"block","opacity":"1"});
+        });
+
+        $("#nav").children("p").click(function(e){
+            e.preventDefault();
+            $("#nav").css({"display":"none","opacity":"0"});
+        });
+
+      });
+  </script>
+  <title>Document</title>
+</head>
+<body>
+ 
+  <p id="go_top">
+    <a href="#">
+        <i class="xi-angle-down-thin"></i>
+    </a>
+  </p>
+  
+  <header>
+    <p id="logo"><a href="../index.html"></a></p>
+    <div id="nav_btn">
+        <p></p>
+    </div>
+    <nav id="nav">
+     <h1 class="hidden">네비게이터</h1>
+     <p>
+         <a href="#">
+            <span class="hidden">닫기버튼</span>
+         </a>
+     </p>
+     <dl>
+         <dt>Introduction</dt>
+         <dd><a href="company.html">회사소개</a></dd>
+         <dd><a href="business.html">사업소개</a></dd>
+     </dl>
+     <dl>
+         <dt>Information</dt>
+         <dd><a href="invest.html">투자정보</a></dd>
+         <dd><a href="notice.html">공지사항</a></dd>
+         <dd><a href="contact.html">CONTACT</a></dd>
+     </dl>
+     <dl>
+         <dt class="hidden">언어선택</dt>
+         <dd><a href="#">KOR</a></dd>
+         <dd><a href="#">ENG</a></dd>
+     </dl>
+    </nav><!--nav END-->
+  </header>
+  <main>
+    <section id="title">
+      <h1>CONTACT</h1>
+      <p>
+        뛰어난 기술력을 기반으로 친환경 가치를 경쟁요소로 하는<br />
+        친환경 에너지 산업의 혁신을 주도하는 친환경 기술 전문 기업입니다.
+      </p>
+    </section>
+
+    <section id="info">
+        <h1 class="hidden">주소 및 연락처</h1>
+        <div id="h_office">
+
+            <div class="text">
+               <h2>퍼시픽바이오 서울본사</h2>
+               <ul>
+                   <li>
+                       <p>위치</p>
+                       <address>
+                            서울특별시 강남구 테헤란로 439, 3층(연당빌딩)
+                       </address>
+                   </li>
+                   <li>
+                       <p>전화번호</p>
+                       <address>02-6917-5300</address>
+                   </li>
+                   <li>
+                       <p>팩스</p>
+                       <address>02-6917-5300</address>
+                   </li>
+               </ul>
+            </div>
+
+            <div class="map">
+              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d791.261926563443!2d127.05462702927025!3d37.50679296261121!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x357ca413eec5e64d%3A0x3d1471cf7fd629eb!2z7ISc7Jq47Yq567OE7IucIOqwleuCqOq1rCDsgrzshLHrj5kg7YWM7Zek656A66GcIDQzOSAz7Li1!5e0!3m2!1sko!2skr!4v1568101023857!5m2!1sko!2skr" width="720" height="520" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
+            </div>
+        </div>
+
+        <div id="factory">
+            <div class="map">
+              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3253.274031771506!2d128.48504691560626!3d35.3736588543853!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x356f378853e46ad1%3A0x4db0a2b628d70243!2z6rK97IOB64Ko64-EIO2VqOyViOq1sCDsuaDshJzrqbQg6rO164uo64-ZNOq4uCA5NQ!5e0!3m2!1sko!2skr!4v1568101087928!5m2!1sko!2skr" width="720" height="520" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
+            </div>
+            <div class="text">
+               <h2>퍼시픽바이오 함안 공장</h2>
+               <ul>
+                   <li>
+                       <p>위치</p>
+                       <address>
+                            경상남도 함안군 칠서면 공단동 4길 95
+                       </address>
+                   </li>
+                   <li>
+                       <p>전화번호</p>
+                       <address>055-586-9009</address>
+                   </li>
+                   <li>
+                       <p>팩스</p>
+                       <address>055-586-9302</address>
+                   </li>
+               </ul>
+            </div>
+        </div>
+    </section>
+  </main>
+  <footer>
+      <div>
+          <dl>
+              <dt class="hidden">유틸메뉴</dt>
+              <dd>
+                  <a href="#">웹접근성 안내</a>
+              </dd>
+              <dd>
+                  <a href="company.html">회사소개</a>
+              </dd>
+              <dd>
+                  <a href="business.html">사업소개</a>
+              </dd>
+              <dd>
+                  <a href="invest.html">투자정보</a>
+              </dd>
+              <dd>
+                  <a href="notice.html">공지사항</a>
+              </dd>
+              <dd>
+                  <a href="contact.html">CONTACT</a>
+              </dd>
+          </dl>
+      </div>
+      <address>
+          <p>COPYRIGHT 2016@PACIFICBIO. ALL RIGHTS RESERVED.</p>
+      </address>
+
+  </footer>
+</body>
+</html>

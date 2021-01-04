@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <!--
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    -->
+    <title>리오엘리</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" media="only screen and (min-width:981px)" href="css/lioele_web.css">
+    <link rel="stylesheet" media="only screen and (max-width:980px)" href="css/lioele_mobile.css">
+    <link rel="stylesheet" href="css/lioele_mobile.css">
+    <script src="../jquery-3.4.1.min.js"></script>
+    <script>
+        $(function(){
+           $("nav>ul>li").mouseover(function(){
+               $(this).children("ul").stop().slideDown(200);
+           });
+            
+           $("nav>ul>li").mouseleave(function(){
+               $(this).children("ul").stop().slideUp(200);
+           });
+            
+            var banner=0;
+            var pos=0;
+            
+            function auto(){
+                
+                banner++;
+                pos=-500*banner;
+                
+                var bannerNum=$("#banner>div.contents>ul>li").length;
+                
+                $("#banner>ul.list>li").eq(banner).addClass("on").siblings().removeClass("on");
+                
+                if(banner==bannerNum-1){
+                    $("#banner>ul.list>li").eq(0).addClass("on").siblings().removeClass("on");
+                };
+
+                $("#banner>div.contents>ul").animate({"top":pos},900,function(){
+                    
+                    if(banner>bannerNum-2){
+                        banner=0;
+                        
+                        $("#banner>div.contents>ul").css({"top":0});
+                    };
+                    
+                });
+
+                
+            };
+            
+            
+            var auto_banner=setInterval(auto, 4500);
+            
+            $("#banner>ul.list>li").click(function(e){
+                e.preventDefault();
+   
+                clearInterval(auto_banner);
+                
+                var idx3=$(this).index();
+                var position=-500*idx3;
+
+                
+                $("#banner>div.contents>ul").stop().animate({"top":position},900,function(){});
+                
+                $(this).addClass("on").siblings().removeClass("on");
+                
+                
+            });
+            
+            $(".recommend>ul.product").mouseover(function(){
+                var idx2 = $(this).index();
+                $(".recommend>ul.list>li").eq(idx2-2).addClass("on").siblings().removeClass("on");
+            });
+            
+            $(".recommend>ul.product>li").mouseover(function(){
+                $(this).addClass("on").siblings().addClass("off");
+            });
+            
+            $(".recommend>ul.product>li").mouseleave(function(){
+                $(".recommend>ul.product>li").removeClass("on").removeClass("off");
+            });
+            
+            $(".recommend>ul.list>li").mouseover(function(){
+                $(this).addClass("on").siblings().removeClass("on");
+                var idx=$(this).index();
+                $(".recommend>ul.product").eq(idx).addClass("on").siblings().removeClass("on");
+            });
+            
+            $(".recommend>ul.list>li").mouseleave(function(){
+                $(".recommend>ul.list>li").removeClass("on");
+            
+            });
+          
+        });
+    </script>
+    <style>
+ 
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <header class="clearfix">
+           <div class="h_top clearfix">
+             <h1 class="logo">
+                <a href="#">
+                  <img src="images/logo.png" alt="리오엘리">
+                </a>
+             </h1>
+             <form action="">
+                <label for="search">검색</label>
+                <input type="text" name="search" id="search">
+                <input type="submit" value="&#xf002;">
+             </form>
+           </div>
+           <nav>
+               <ul class="clearfix">
+                    <li>
+                        <a href="#"><span>기초</span></a>
+                        <ul>
+                            <li><a href="#">스킨/미스트</a></li>
+                            <li><a href="#">로션</a></li>
+                            <li><a href="#">에센스/앰플/오일</a></li>
+                            <li><a href="#">크림</a></li>
+                            <li><a href="#">아이케어</a></li>
+                            <li><a href="#">기초세트</a></li>
+                            <li><a href="#">피부고민별</a></li>
+                            <li><a href="#"><span class="add"></span></a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#"><span>베이스</span></a>
+                        <ul>
+                            <li><a href="#">비비/씨씨/쿠션</a></li>
+                            <li><a href="#">베이스/프라이머</a></li>
+                            <li><a href="#">파운데이션/컨실러</a></li>
+                            <li><a href="#">팩트/파우더</a></li>
+                            <li><a href="#"><span class="add"></span></a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#"><span>색조</span></a>
+                        <ul>
+                            <li><a href="#">립밤/립스틱</a></li>
+                            <li><a href="#">립에센스/틴트/글로즈</a></li>
+                            <li><a href="#">마스카라</a></li>
+                            <li><a href="#">아이섀도우</a></li>
+                            <li><a href="#">아이라이너</a></li>
+                            <li><a href="#">아이라이너세트</a></li>
+                            <li><a href="#">아이브로우</a></li>
+                            <li><a href="#">블러셔/하이라이터</a></li>
+                            <li><a href="#"><span class="add"></span></a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#"><span>스페셜</span></a>
+                        <ul>
+                            <li><a href="#">자외선 차단</a></li>
+                            <li><a href="#">스페셜 모공케어</a></li>
+                            <li><a href="#">영양/마사지/팩</a></li>
+                            <li><a href="#">민감성케어</a></li>
+                            <li><a href="#"><span class="add"></span></a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#"><span>클렌징</span></a>
+                        <ul>
+                            <li><a href="#">폼클렌징</a></li>
+                            <li><a href="#">클렌징 젤/로션/크림/오일</a></li>
+                            <li><a href="#">각질케어</a></li>
+                            <li><a href="#">리무버/티슈</a></li>
+                            <li><a href="#"><span class="add"></span></a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#"><span>바디/헤어</span></a>
+                        <ul>
+                            <li><a href="#">바디/핸드</a></li>
+                            <li><a href="#">헤어</a></li>
+                            <li><a href="#"><span class="add"></span></a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#"><span>남성</span></a>
+                        <ul>
+                            <li><a href="#">스킨</a></li>
+                            <li><a href="#">로션</a></li>
+                            <li><a href="#">기초세트</a></li>
+                            <li><a href="#"><span class="add"></span></a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#"><span>네일/소품</span></a>
+                        <ul>
+                            <li><a href="#">네일/리무버</a></li>
+                            <li><a href="#">네일소품</a></li>
+                            <li><a href="#">퍼프/화장솜/면봉</a></li>
+                            <li><a href="#">메이크업 브러쉬</a></li>
+                            <li><a href="#">속눈썹/아이뷰러</a></li>
+                            <li><a href="#">헤어/바디소품</a></li>
+                            <li><a href="#">마사지/클랜징소품</a></li>
+                            <li><a href="#">기타</a></li>
+                            <li><a href="#"><span class="add"></span></a></li>
+                        </ul>
+                    </li>
+               </ul>
+           </nav>
+
+        </header>
+        <main>
+            <section id="banner">
+                <h1 class="hidden">배너광고</h1>
+                <div class="contents">
+                    <ul>
+                        <li><a href="#"><img src="images/banner01_re3.jpg" alt="배너1"></a></li>
+                        <li><a href="#"><img src="images/banner02_re.jpg" alt="배너2"></a></li>
+                        <li><a href="#"><img src="images/banner03.jpg" alt="배너3"></a></li>
+                        <li><a href="#"><img src="images/banner04_re4.jpg" alt="배너4"></a></li>
+                        <li><a href="#"><img src="images/banner01_re3.jpg" alt="배너1"></a></li>
+                    </ul>
+                </div>
+                <ul class="list clearfix">
+                    <li class="on"><a href="#">메이크업 Festival 특별전</a></li>
+                    <li><a href="#">블랙헤드 및 AC컨트롤 집중코스</a></li>
+                    <li><a href="#">화이트닝크림 BEST 1위</a></li>
+                    <li><a href="#">고보습 기초케어 SPECIAL</a></li>
+                </ul>
+            </section>
+            
+            <section class="event">
+               <h1 class="hidden">이벤트</h1>
+               <ul class="clearfix">
+                   <li><a href="#"></a></li>
+                   <li><a href="#"></a></li>
+                   <li><a href="#"></a></li>
+               </ul>
+            </section>
+            
+            <section class="recommend">
+                <h1 class="hidden">추천상품</h1>
+                <ul class="list clearfix">
+                    <li class="on">베이스</li>
+                    <li>립&amp;아이</li>
+                    <li>화이트닝</li>
+                    <li>스페셜</li>
+                </ul>
+                <ul class="clearfix product on">
+                    <li class="transition"><a href="#"></a></li>
+                    <li class="transition"><a href="#"></a></li>
+                    <li class="transition"><a href="#"></a></li>
+                    <li class="transition"><a href="#"></a></li>
+                </ul>
+                <ul class="clearfix product">
+                    <li class="transition"><a href="#"></a></li>
+                    <li class="transition"><a href="#"></a></li>
+                    <li class="transition"><a href="#"></a></li>
+                    <li class="transition"><a href="#"></a></li>
+                </ul>
+                <ul class="clearfix product">
+                    <li class="transition"><a href="#"></a></li>
+                    <li class="transition"><a href="#"></a></li>
+                    <li class="transition"><a href="#"></a></li>
+                    <li class="transition"><a href="#"></a></li>
+                </ul>
+                <ul class="clearfix product">
+                    <li class="transition"><a href="#"></a></li>
+                    <li class="transition"><a href="#"></a></li>
+                    <li class="transition"><a href="#"></a></li>
+                    <li class="transition"><a href="#"></a></li>
+                </ul>
+            </section>
+            <div class="fixed web">
+              <div class="bg-wrap">
+                <div class="bg">
+                    <ul>
+                        <li><a href="#"></a></li>
+                        <li><a href="#"></a></li>
+                        <li><a href="#"></a></li>
+                    </ul>
+                </div>
+              </div>
+            </div>
+            <div class="fixed mobile">
+              <div class="bg-wrap">
+                <div class="bg">
+                    <ul class="clearfix">
+                        <li><a href="#"></a></li>
+                        <li><a href="#"></a></li>
+                        <li><a href="#"></a></li>
+                    </ul>
+                </div>
+              </div>
+            </div>
+            <div class="space"></div>
+        </main>
+        <!-- 포폴 사이트 소개 개인작업임을 강조
+        <aside>
+            <a href="#">닫기</a>
+        </aside>
+        -->
+        <footer class="clearfix">
+            <dl class="clearfix">
+                <dt class="hidden">유틸메뉴</dt>
+                <dd><a href="#">로그인</a></dd>
+                <dd><a href="#">회원가입</a></dd>
+                <dd><a href="#">장바구니</a></dd>
+                <dd><a href="#">마이페이지</a></dd>
+                <dd><a href="#">주문조회</a></dd> <!--포지션 픽스로 하단에 배치, 바닥까지가면 푸터와 합쳐지게-->
+            </dl>
+        </footer>
+    </div>
+</body>
+</html>

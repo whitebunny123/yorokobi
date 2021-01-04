@@ -1,0 +1,524 @@
+@font-face{
+    font-family:"youth";
+    src:url(../font/Youth.eot);
+    src:local(※), url(../font/Youth.woff) format('woff'), url(../font/Youth.ttf) format('trueType');
+    font-weight:normal;
+    font-style:normal;
+
+}
+
+body{
+    width:100vw;
+    overflow-x: hidden;
+    font-family: "youth";
+}
+/*스크롤 인디케이터
+p#scroll{
+    z-index: 100;
+    width:50px;
+    height:30px;
+    background: rgba(0,0,0,.5);
+    color:white;
+    font-size:24px;
+    line-height: 30px;
+    text-align: center;
+    position: fixed;
+    right:0;
+}
+*/
+p#go_top{
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    right:3vw;
+    bottom:3vw;
+    box-sizing: border-box;
+    width:5vw;
+    height:5vw;
+    border: 1px solid #E2E2E2;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.1);
+    line-height: 5vw;
+    text-align: center;
+}
+p#go_top>a{
+    display: block;
+    font-size: 2.4vw;
+    color:#e2e2e2;
+}
+p#go_top>a>i{}
+
+header{
+    overflow: hidden;
+    position: relative;
+    width:100vw;
+    height:76vw;
+}
+
+/*헤더탑*/
+
+/* 클라스 on주고 스크롤시 position:fixed
+헤더탑 로고, 네비게이션 버튼 사이즈 줄이기*/
+#header_top{
+    display: flex;
+    padding-top:1px;
+    height:14.7vw;
+    transition: all 0.3s ease;
+}
+
+/*로고*/
+
+#header_top>div.logo{
+    flex: 1 0 85%;
+}
+
+#header_top>div.logo>div.mobile{
+    margin-top:3.2vw;
+    margin-left:3vw;
+    display: flex;
+    justify-content: space-between;
+    width:35vw;
+    height:8.3vw;
+}
+
+#header_top>div.logo>div.mobile>p{
+    flex: 0 0 8.3vw;
+    height:8.3vw;
+    background: url(../imgs/mobile/logo_m.png) no-repeat 0 0/contain;
+}
+#header_top>div.logo>div.mobile>p>a{
+    display: block;
+    width:8.3vw;
+    height:8.3vw;
+}
+#header_top>div.logo>div.mobile>div{
+    flex: 1 0 auto;
+    margin-left: 1.5vw;
+    height:8.3vw;
+}
+
+#header_top>div.logo>div.mobile>div>p{
+}
+
+#header_top>div.logo>div.mobile>div>p:nth-of-type(1){
+    margin-top:1.6vw;
+    font-size:2.7vw;
+    line-height: 2.4vw;
+    color:#3171aa;
+}
+#header_top>div.logo>div.mobile>div>p:nth-of-type(2){
+    margin-top:1.3vw;
+    font-size:1.2vw;
+    line-height: 1.2vw;
+    color:#6a9dd3;
+}
+
+#header_top>a{
+    flex: 1 0 15%;
+    margin-left: 3vw;
+    margin-top:4.8vw;
+    height: 4.8vw;
+}
+#header_top>a>p#nav_button{
+    position: relative;
+    width:5.7vw;
+    height:1px;
+    margin-top:2.4vw;
+    background: #b7b7b7;
+}
+
+#header_top>a>p#nav_button:before{
+    content: "";
+    position: absolute;
+    bottom:-2.4vw;
+    width:5.7vw;
+    height:1px;
+    background: #b7b7b7;
+}
+
+#header_top>a>p#nav_button:after{
+    content: "";
+    position: absolute;
+    top:-2.4vw;
+    width:5.7vw;
+    height:1px;
+    background: #b7b7b7;
+}
+
+/*스크롤시*/
+#header_top.on{
+    position:fixed;
+    z-index: 500;
+    width:100vw;
+    height:14.7vw;
+    background: rgba(255,255,255,0.8);
+    border-bottom: 1px solid #f4f4f4;
+}
+
+/*네비게이터*/
+
+#nav{
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    right:0; top:0;
+    clear:both;
+    width:100vw;
+    height: 100vh;
+    box-sizing: border-box;
+    background: rgba(255,255,255,0.95);
+}
+
+#nav>div{
+    display: flex;
+    padding-top:1px;
+    height:14.7vw;
+}
+#nav>div>p{}
+#nav>div>p:nth-of-type(1){
+    flex: 1 0 85%;
+}
+#nav>div>p:nth-of-type(2){
+    flex: 1 0 15%;
+    margin-top:4.8vw;
+    margin-left:3vw;
+    width:5vw;
+    height:5vw;
+    background: url(../imgs/header/nav/close_button.png) no-repeat 0 0/contain;
+}
+#nav>div>p:nth-of-type(2)>a{
+    display: block;
+    width:5vw;
+    height:5vw;
+}
+
+/*스크롤시 닫기버튼*/
+
+
+/*닫기버튼 끝*/
+
+#nav>dl{
+    margin-left: 20vw;
+}
+#nav>dl>dt{
+    padding-bottom: 25px;
+    font-size: 5vw;
+    line-height:5vw;
+    color: #889C9E;
+}
+#nav>dl>dd{
+    font-size:3vw;
+}
+
+#nav>dl:not(:nth-of-type(3))>dd{
+    line-height: 10vw;
+    margin-left: 2vw;
+}
+
+#nav>dl>dd>a{
+    color: #7BADAC;
+
+}
+
+#nav>dl:nth-of-type(1){
+    margin-top: 5vw;
+}
+#nav>dl:nth-of-type(1)>dt{
+    position: relative;
+}
+#nav>dl:nth-of-type(1)>dt:before{
+    content: "";
+    position: absolute;
+    left:-6vw; top:0vw;
+    width:4vw; height:4vw;
+    background: url(../imgs/header/nav/leaf1.png) no-repeat 0 0/contain;
+}
+#nav>dl:nth-of-type(1)>dd{}
+#nav>dl:nth-of-type(1)>dd:nth-of-type(2){
+    margin-bottom: 7vw;
+}
+#nav>dl:nth-of-type(1)>dd>a{}
+
+#nav>dl:nth-of-type(2){}
+#nav>dl:nth-of-type(2)>dt{
+    position: relative;
+}
+#nav>dl:nth-of-type(2)>dt:before{
+    content: "";
+    position: absolute;
+    left:-6vw; top:0vw;
+    width:4vw; height:4vw;
+    background: url(../imgs/header/nav/leaf2.png) no-repeat 0 0/contain;
+}
+#nav>dl:nth-of-type(2)>dd{}
+#nav>dl:nth-of-type(2)>dd:last-child{
+    margin-bottom: 7vw;
+}
+#nav>dl:nth-of-type(2)>dd>a{}
+
+#nav>dl:nth-of-type(3){
+    height:5vw;
+}
+#nav>dl:nth-of-type(3)>dd{
+    float:left;
+    width:10vw; height:5vw;
+    margin-left: 1vw;
+    margin-right: 3vw;
+    line-height: 5vw;
+    text-align: center;
+    background: #D1E3E8;
+}
+#nav>dl:nth-of-type(3)>dd>a{
+    color:white;
+}
+
+p#space{
+    height:0px;
+    transition: all 1s ease;
+}
+
+p#space.on{
+    height:14.7vw;
+}
+
+/*배너 슬라이더플랙스*/
+
+    /*이미지와 함께 사용하는 텍스트 요소 선택자*/
+    .slides>li{
+      position: relative;
+    }
+    .slides>li:nth-of-type(2){}
+    .slides>li:nth-of-type(3){}
+    .slides>li:nth-of-type(4){}
+    .slides>li:not(:nth-child(4))>div.flex-caption{
+      position: absolute;
+      left:0; top:0;
+      box-sizing: border-box;
+      padding-top:27vw;
+      padding-left:12vw;
+      width:100%;
+      line-height: 5.3vw;
+      font-size:2.1vw;
+      color:white;
+    }
+    .flex-caption>span:nth-of-type(2){
+      font-size: 5.3vw;
+    }
+    .slides>li:nth-child(2)>div.flex-caption{
+    }
+    .slides>li:nth-child(3)>div.flex-caption{
+    }
+    .slides>li:nth-child(4)>div.flex-caption{
+      position: absolute;
+      left:0; top:0;
+      box-sizing: border-box;
+      padding-top: 24.35vw;
+      padding-right: 12vw;
+      width:100%;
+      line-height: 5.3vw;
+      color:white;
+      text-align: right;
+    }
+
+    .slides>li:nth-of-type(4)>div.flex-caption>p{
+      }
+    .slides>li:nth-of-type(4)>div.flex-caption>p:nth-of-type(1)>span:not(:nth-of-type(2)){
+      font-size:2.1vw;
+    }
+    .slides>li:nth-of-type(4)>div.flex-caption>p:nth-of-type(1)>span:nth-of-type(2){
+      font-size: 5.3vw;
+    }
+
+    .slides>li:nth-of-type(4)>div.flex-caption>p:nth-of-type(2)>span:not(:nth-of-type(1)){
+      font-size:2.1vw;
+    }
+
+    .slides>li:nth-of-type(4)>div.flex-caption>p:nth-of-type(2)>span:nth-of-type(1){
+      font-size: 5.3vw;
+    }
+
+    /* 실질적인 이미지가 선택자. 이 선택자를 사용해서 이미지 크기를 조정할 수 있습니다. */
+    .flexslider{margin:auto; position:relative; width:100%;}
+    .flex-viewport{width:100%;  }
+    .flex-viewport  img{width:100%;}
+
+
+    /* 페이징 처리를 해주는 선택자입니다. 이 .flex-control-nav.flex-control-paging 선택자는 ol목록 태그가 자동으로 생성된다. */
+    .flex-control-nav.flex-control-paging{
+      position:absolute; width:100%;
+      bottom:2.5vw; left:0;
+      text-align:center;
+      font-size: 0; line-height: 0;
+    }
+      /*페이징을 감사는 ol내부 li요소를 가리킨다.*/
+    .flex-control-nav.flex-control-paging>li{
+          display:inline-block;
+          margin-right: 2vw;
+          width: 2vw; height: 2vw;
+          border-radius:50%;
+          background: rgba(255,255,255,0.8);
+    }
+
+    .flex-control-nav.flex-control-paging>li:nth-of-type(3){
+            margin-right: 0;
+    }
+
+
+    /* 화면에 보이는 선택된 요소를 가리키는 썸네일(페이)을 가리키는 선택자*/
+    .flex-control-nav.flex-control-paging>li>a.flex-active{
+          display:block;
+          width: 2vw; height:2vw;
+          border-radius:50%;
+          background: rgba(102,190,211,0.8);
+        }
+
+    .flex-direction-nav{}/*목록태그  좌우이동 아빠요소*/
+    .flex-nav-prev{display: none;} /* 이전으로 이동하는 버튼*/
+    .flex-nav-next{display: none;} /*다음으로 이동하는 버튼*/
+    .flex-nav-prev>a{ }
+    .flex-nav-next>a{}
+
+/*
+#banner{
+    overflow: hidden;
+    clear:both;
+    position:relative;
+    width:100vw;
+    height:61.3vw;
+    transition: all 0.3s ease;
+}
+#banner>ul{}
+#banner>ul>li{
+    position:absolute;
+    left:0; top:0;
+    width:100vw;
+    height:61.3vw;
+    color:white;
+}
+*/
+/*배너공통*/
+/*
+#banner>ul>li>p{
+    margin-top:27vw;
+    margin-left: 12vw;
+    height:5.3vw;
+    line-height: 5.3vw;
+
+}
+#banner>ul>li>p>span{
+    line-height: 5.3vw;
+}
+
+#banner>ul>li p>span:nth-of-type(2n+1){
+    font-size:2.1vw;
+    vertical-align:baseline;
+}
+
+#banner>ul>li p>span:nth-of-type(1){
+}
+#banner>ul>li p>span:nth-of-type(2){
+    font-size:5.3vw;
+}
+#banner>ul>li>p>span:nth-of-type(3){
+}
+*/
+/*첫번째 배너*/
+/*
+#banner>ul>li:nth-of-type(1){
+    z-index: 1;
+    background: url(../imgs/mobile/header/banner/nature1_460.jpg) no-repeat 0 0/cover;
+}
+
+*/
+
+/*두번째 배너*/
+/*
+#banner>ul>li:nth-of-type(2){
+    background: url(../imgs/mobile/header/banner/leaf1_460.jpg) no-repeat 0 0/cover;
+}
+*/
+/*세번째 배너*/
+/*
+#banner>ul>li:nth-of-type(3){
+    background: url(../imgs/mobile/header/banner/nature3_460.jpg) no-repeat 0 0/cover;
+}
+
+#banner>ul>li.top{
+    z-index:10;
+}
+#banner>ul>li.middle{
+    z-index:5;
+}
+
+#banner>ul>li:nth-of-type(3)>div{
+    margin-top:24.35vw;
+    padding-right: 11.3vw;
+    width:100vw;
+    box-sizing: border-box;
+    text-align: right;
+}
+
+#banner>ul>li:nth-of-type(3)>div>p:nth-of-type(2){
+    margin-top: 1.3vw;
+}
+#banner>ul>li:nth-of-type(3)>div>p:nth-of-type(2)>span:nth-of-type(1){
+    font-size:5.3vw;
+}
+#banner>ul>li:nth-of-type(3)>div>p:nth-of-type(2)>span:nth-of-type(2){
+    font-size:2.1vw;
+}
+
+
+#banner>ul>li>a{}
+#banner>ul>li>a>img{}
+*/
+/*배너버튼*/
+/*
+#banner_button1{
+    position: absolute;
+    left:46vw; bottom:0.8vw;
+    width:8vw;
+    z-index: 300;
+    height:3.2vw;
+}
+#banner_button1>p{
+    cursor: pointer;
+    float:left;
+    margin-right: 1.6vw;
+    width:1.6vw;
+    height:1.6vw;
+    border-radius:50%;
+    background: rgba(255,255,255,0.8);
+    box-shadow: 1px 1px 2px #8E8E8E;
+}
+
+#banner_button1>p:last-child{
+    margin-right: 0;
+}
+
+#banner_button1>p.on{
+     background: rgba(102,190,211,0.8);
+}
+*/
+/*재생버튼*/
+/*
+#play_button{
+    position: absolute;
+    z-index: 11;
+    bottom:1vw; right:5vw;
+}
+
+#play_button>p{
+    width:4vw;
+    height:4vw;
+    cursor: pointer;
+    font-size:4vw;
+    color:white;
+    text-shadow: 1px 1px 2px #8E8E8E;
+}
+#play_button>p>i{
+
+}
+
+*/
+.web{display:none;}

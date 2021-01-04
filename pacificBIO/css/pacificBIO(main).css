@@ -1,0 +1,369 @@
+main{
+
+}
+
+/* WHAT WE HAVE */
+
+#have_w{
+    height:1206px;
+    padding-top:50px;
+    border-bottom: 1px solid #E2E2E2;
+    border-top:1px solid rgba(0,0,0,0);
+}
+#have_w>div{
+    margin: 0 auto;
+    width:1320px;
+    height:800px;
+}
+#have_w>div>div.title{
+    margin: 0 auto;
+    width:1320px;
+    height: 48px;
+
+}
+#have_w>div>div.title>p{
+    opacity: 0;
+    float:left;
+    margin-right: 40px;
+    width:300px;
+    font-size:48px;
+    line-height: 48px;
+    color:#7DCDCD;
+    position:relative;
+}
+#have_w>div>div.title>p:nth-of-type(1){
+
+    top:-91px;
+}
+#have_w>div>div.title>p:nth-of-type(2){
+    top:0;
+}
+#have_w>div>div.title>p:nth-of-type(3){
+    top:83px;
+}
+
+#have_w>div>ul{
+    margin-top:48px;
+    height:800px;
+}
+#have_w>div>ul>li{
+    overflow: hidden;
+    float:left;
+    position: relative;
+    width:300px;
+    height:550px;
+    margin-right: 40px;
+    cursor: pointer;
+}
+#have_w>div>ul>li:last-child{
+    margin-right: 0;
+}
+#have_w>div>ul>li:nth-of-type(1){
+
+    background: url(../imgs/main/have/chem.jpg) no-repeat 0 0;
+}
+#have_w>div>ul>li:nth-of-type(2){
+    margin-top: 83px;
+    background: url(../imgs/main/have/garbage.jpg) no-repeat 0 0;
+}
+#have_w>div>ul>li:nth-of-type(3){
+    margin-top: 166px;
+    background: url(../imgs/main/have/green.jpg) no-repeat 0 0;
+}
+#have_w>div>ul>li:nth-of-type(4){
+    margin-top: 249px;
+    background: url(../imgs/main/have/dollar.jpg) no-repeat 0 0;
+}
+#have_w>div>ul>li>a{
+    display: block;
+}
+#have_w>div>ul>li>a>p{
+    overflow: hidden;
+    position: absolute;
+    width:300px;
+    box-sizing: border-box;
+    background: rgba(0,0,0,0.2);
+    color:white;
+    font-size:24px;
+    line-height: 29px;
+}
+#have_w>div>ul>li>a>p:first-child{
+    left:0; bottom:0;
+    height:150px;
+    padding: 30px 0 0 32px ;
+}
+#have_w>div>ul>li>a>p:nth-of-type(2){
+    left:0;
+    height:550px;
+    padding: 30px 0 0 32px;
+    background: rgba(0,0,0,0.15);
+    font-size:22px;
+    line-height: 32px;
+    opacity: 0;
+}
+#have_w>div>ul>li:nth-of-type(2n+1)>a>p:nth-of-type(2){
+    top:0;
+}
+#have_w>div>ul>li:nth-of-type(2n)>a>p:nth-of-type(2){
+    bottom:0;
+}
+#have_w>div>ul>li:nth-of-type(2n)>a>p:first-child{
+    top:0;
+}
+#have_w>p{
+    position:relative;
+    top:-11px;
+    width:750px;
+    height:300px;
+    background: url(../imgs/main/have/color6.png) no-repeat 0 0;
+}
+
+/* WHAT WE PROPOSE */
+
+#propose{
+    width:100vw;
+    min-width: 1320px;
+    height:54.2vw;
+    min-height: 803px;
+    border-bottom: 1px solid #E2E2E2;
+}
+#propose>h1{
+    margin:107px 0 86px 0;
+    font-size: 48px;
+    line-height: 48px;
+    color:#4EAFAC;
+
+}
+#propose>.wrapper{
+    width:89.1vw;
+    min-width: 1320px;
+    height:860px;
+    position: relative;
+}
+#propose>.wrapper>#propose_contents{
+    position: absolute;
+    left:0; top:0;
+}
+#propose>.wrapper>#propose_contents>ul{
+    position: relative;
+    width:48.4vw;
+    min-width: 718px;
+}
+#propose>.wrapper>#propose_contents>ul>li{
+    position: absolute;
+    width:48.4vw;
+    min-width: 718px;
+    height:38.1vw;
+    min-height: 564px;
+}
+#propose>.wrapper>#propose_contents>ul>li:nth-of-type(1){
+    background: url(../imgs/main/propose/contents/industry.jpg) no-repeat 0 0/cover;
+}
+#propose>.wrapper>#propose_contents>ul>li:nth-of-type(2){
+    background: url(../imgs/main/propose/contents/bulb.jpg) no-repeat 0 0/cover;
+}
+#propose>.wrapper>#propose_contents>ul>li:nth-of-type(3){
+    background: url(../imgs/main/propose/contents/ship.jpg) no-repeat 0 0/cover;
+}
+#propose>.wrapper>#propose_contents>ul>li:nth-of-type(4){
+    background: url(../imgs/main/propose/contents/car.jpg) no-repeat 0 0/cover;
+}
+#propose>.wrapper>#propose_contents>ul>li.on{
+    z-index: 10;
+}
+#propose>.wrapper>#propose_contents>ul>li:not(:first-child){
+    opacity: 0;
+}
+#propose>.wrapper>#propose_contents>ul>li>p{
+    padding: 45px 40px 45px 0;
+    color:white;
+    font-size: 24px;
+    line-height: 32px;
+    text-align: right;
+    background: rgba(0,0,0,0.05);
+}
+#propose>.wrapper>#propose_thumb{
+    position: absolute;
+    right:0; top:0;
+    z-index: 20;
+    margin-left:2.6vw;
+    width:38.1vw;
+    min-width:564px;
+    height:38.1vw;
+    min-height:564px;
+}
+#propose>.wrapper>#propose_thumb>ul{
+    position: relative;
+    width:38.1vw;
+    min-width:564px;
+    height:38.1vw;
+    min-height:564px;
+}
+#propose>.wrapper>#propose_thumb>ul>li{
+    position: absolute;
+    width:17.7vw;
+    min-width: 263px;
+    height:17.7vw;
+    min-height:263px;
+}
+#propose>.wrapper>#propose_thumb>ul>li:nth-of-type(1){
+    background: url(../imgs/main/propose/thumb/industry_thumb.jpg) no-repeat center center/contain;
+    left:0; top:0;
+}
+#propose>.wrapper>#propose_thumb>ul>li:nth-of-type(2){
+    background: url(../imgs/main/propose/thumb/bulb_thumb.jpg) no-repeat center center;
+    right:0; top:0;
+}
+#propose>.wrapper>#propose_thumb>ul>li:nth-of-type(3){
+    background: url(../imgs/main/propose/thumb/ship_thumb.jpg) no-repeat center center;
+    left:0; bottom:0;
+}
+#propose>.wrapper>#propose_thumb>ul>li:nth-of-type(4){
+    background: url(../imgs/main/propose/thumb/car_thumb.jpg) no-repeat center center;
+    right:0; bottom:0;
+}
+
+#propose>.wrapper>#propose_thumb>ul>li>a{
+    position:relative;
+    display: block;
+    width:17.7vw;
+    min-width: 263px;
+    height:17.7vw;
+    min-height:263px;
+    color:white;
+    font-size: calc(25px + 1.3vw);
+    line-height: calc(25px + 1.3vw);
+    text-align: center;
+    transition: all 0.3s ease;
+}
+#propose>.wrapper>#propose_thumb>ul>li>a>p{
+    position: absolute;
+    box-sizing: border-box;
+    padding-top: calc(50% - 12.5px - 0.65vw);
+    top:0; left:0;
+    width:17.7vw;
+    min-width: 263px;
+    height:17.7vw;
+    min-height:263px;
+}
+#propose>.wrapper>#propose_thumb>ul>li>a>p:nth-of-type(1){
+    background: rgba(0,0,0,0.2);
+    height:17.7vw;
+}
+
+/* WHAT WE FOCUS*/
+
+#focus{
+    margin: 110px auto 0;
+    width:950px;
+    height:1080px;
+}
+#focus>h1{
+    margin:0 auto;
+    width:390px;
+    text-align: center;
+    font-size: 48px;
+    line-height: 48px;
+    color:#338E8A;
+}
+#focus>ul{
+    margin-top: 165px;
+}
+#focus>ul>li{
+    position:relative;
+    top:-50px;
+    margin-bottom: 165px;
+    width:950px;
+    height:180px;
+    clear:both;
+    opacity: 0;
+}
+#focus>ul>li:nth-of-type(1){
+}
+#focus>ul>li>div{
+    float:left;
+    width:200px;
+    height:180px;
+}
+#focus>ul>li>div>p:nth-of-type(1){
+    width:185px;
+    height:150px;
+}
+#focus>ul>li:nth-of-type(1)>div>p:nth-of-type(1){
+   background: url(../imgs/main/focus/focus1.png) no-repeat 0 0;
+}
+#focus>ul>li:nth-of-type(2)>div>p:nth-of-type(1){
+    background: url(../imgs/main/focus/focus2.png) no-repeat 0 0;
+}
+#focus>ul>li:nth-of-type(3)>div>p:nth-of-type(1){
+    background: url(../imgs/main/focus/focus3.png) no-repeat 0 0;
+}
+#focus>ul>li>div>p{}
+#focus>ul>li>div>p:nth-of-type(2){
+    margin-top:22px;
+    text-align: center;
+    font-size: 22px;
+    color:#889C9E;
+}
+#focus>ul>li>ul{
+    float:right;
+    margin-top:22px;
+    width:570px;
+    height:;
+}
+#focus>ul>li>ul>li{
+    position: relative;
+    margin-bottom:40px;
+    height: 32px;
+    padding-left:50px;
+    line-height: 32px;
+    font-size: 24px;
+    color:#889C9E;
+}
+
+#focus>ul>li>ul>li:nth-of-type(2n+1):before{
+    content: "";
+    position: absolute;
+    top:0; left:0;
+    width:32px; height:32px;
+    background: url(../imgs/main/focus/leaf1.png) no-repeat 0 0/contain;
+}
+#focus>ul>li>ul>li:nth-of-type(2n):before{
+    content: "";
+    position: absolute;
+    top:0; left:0;
+    width:32px; height:32px;
+    background: url(../imgs/main/focus/leaf2.png) no-repeat 0 0/contain;
+}
+
+div#bottom_bg{
+    position: relative;
+    margin-top:290px;
+    width:100vw;
+    min-width: 1320px;
+    height:27.1vw;
+    min-height: 358px;
+    background: url(../imgs/main/bottom_bg/ground4.png) no-repeat 0 0/contain;
+}
+div#bottom_bg>p{
+    cursor: pointer;
+    position: absolute;
+    z-index: 2;
+    width:7.2%;
+    height:26.6%;
+    transition: all 0.3s ease;
+}
+div#bottom_bg>p:nth-of-type(1){
+    left:9.2%; bottom:32.3%;
+    background: url(../imgs/main/bottom_bg/sprout1.png) no-repeat 0 0/contain;
+}
+
+div#bottom_bg>p:nth-of-type(2){
+    left:50.4%; bottom:59%;
+    background: url(../imgs/main/bottom_bg/sprout2.png) no-repeat 0 0/contain;
+}
+
+div#bottom_bg>p:nth-of-type(3){
+    right:8%; bottom:70%;
+    background: url(../imgs/main/bottom_bg/sprout3.png) no-repeat 0 0/contain;
+}

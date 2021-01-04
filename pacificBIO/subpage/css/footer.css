@@ -1,0 +1,40 @@
+
+footer{
+    border-top: 0.052083vw solid #BFDBE2;
+    box-sizing: border-box;
+    margin-top:0.15625vw;
+    padding-top:2.5vw;
+    width:100vw;
+    height: 8vw;
+}
+footer>div{
+    margin-left:calc(50% - 18.75vw);
+    width:37.5vw;
+}
+footer>div>dl{
+    height:0.72917vw;
+}
+footer>div>dl>dd{
+    float:left;
+    margin: 0 0.78125vw;
+    width:4.6875vw;
+    text-align: center;
+}
+footer>div>dl>dd>a{
+    font-size: 0.72917vw;
+    line-height: 0.72917vw;
+    color:#9ACCC6;
+}
+footer>address{
+    clear: both;
+    margin:0 auto;
+    width:20vw;
+    text-align: center;
+    height:4vw;
+    line-height: 4vw;
+}
+footer>address>p{
+    text-align: center;
+    font-size: 0.625vw;
+    color:#B3E2DE;
+}

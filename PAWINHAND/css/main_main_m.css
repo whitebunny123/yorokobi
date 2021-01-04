@@ -1,0 +1,190 @@
+main{
+    overflow: hidden;
+    position: relative;
+    padding-top:1px;/*#banner와 마진병합 방지*/
+    width:100vw;
+    height:200vw;
+    font-family:"whitecat";
+    color:rgba(255,255,255,1);
+    background: url(../imgs/mobile/main/rainbow_m.png) no-repeat 0 140.3vw/104.7vw, url(../imgs/mobile/main/star_m.png) no-repeat 0 0/104.7vw,url(../imgs/mobile/main/cloud_back.png) no-repeat 82.4vw 178.5vw/66.1vw;
+}
+p#drag{
+    text-align: center;
+    position: fixed;
+    width:30vw;
+    left:35vw; bottom:5vw;
+    border-radius: 1vw;
+    -webkit-animation: move 1.5s ease infinite;
+    -moz-animation: move 1.5s ease infinite;
+    -o-animation: move 1.5s ease infinite;
+    -ms-animation: move 1.5s ease infinite;
+    animation: move 1.5s ease infinite;
+}
+p#drag>span>i{}
+p#drag>span{}
+p#drag>span:nth-of-type(1){
+    display: block;
+}
+p#drag>span:nth-of-type(1).on{
+    display: none;
+}
+p#drag>span:nth-of-type(2){
+    display: none;
+}
+p#drag>span:nth-of-type(2).on{
+    display: block;
+}
+@-webkit-keyframes move {
+  0% { bottom: 5vw; }
+  33% { bottom: 4.5vw; }
+  66% { bottom: 5vw; }
+  90% { bottom: 4.5vw; }
+  100% { bottom: 4.8vw; }
+}
+@-moz-keyframes move {
+  0% { bottom: 5vw; }
+  33% { bottom: 4.5vw; }
+  66% { bottom: 5vw; }
+  90% { bottom: 4.5vw; }
+  100% { bottom: 4.8vw; }
+}
+@-ms-keyframes move {
+  0% { bottom: 5vw; }
+  33% { bottom: 4.5vw; }
+  66% { bottom: 5vw; }
+  90% { bottom: 4.5vw; }
+  100% { bottom: 4.8vw; }
+}
+@-o-keyframes move {
+  0% { bottom: 5vw; }
+  33% { bottom: 4.5vw; }
+  66% { bottom: 5vw; }
+  90% { bottom: 4.5vw; }
+  100% { bottom: 4.8vw; }
+}
+@keyframes move {
+  0% { bottom: 5vw; }
+  33% { bottom: 4.5vw; }
+  66% { bottom: 5vw; }
+  90% { bottom: 4.5vw; }
+  100% { bottom: 4.8vw; }
+}
+
+
+p#cat_m{
+    position: absolute;
+    left:69.2vw; bottom:4.9vw;
+    width:16vw;
+    height:8vw;
+    background: url(../imgs/mobile/main/cat_m.png) no-repeat 0 0/contain;
+}
+p#city_m{
+    position: absolute;
+    left:0; bottom:0;
+    width:100vw;
+    height:13.4vw;
+    background: url(../imgs/mobile/main/city_m.png) no-repeat 0 0/contain;
+}
+p#cloud_m{
+    position: absolute;
+    left:77.47vw; bottom:-6vw;
+    width:42vw;
+    height:16.7vw;
+    background: url(../imgs/mobile/main/cloud_front.png) no-repeat 0 0/contain,url(../imgs/mobile/main/cloud_front.png) no-repeat 0 0/contain;
+}
+
+#banner_m{
+    margin:auto 0;
+    width:100vw;
+}
+#banner_m>h1{}
+/*
+#banner>p.btn{
+    position: absolute;
+    top:365px;
+    font-size: 72px;
+    cursor: pointer;
+}
+
+p#btn_left{
+    left:-100px;
+}
+p#btn_right{
+    right:-100px;
+}
+*/
+#banner_m>ul{
+    padding-top:1px;
+    width:100vw;
+}
+#banner_m>ul>li{
+    margin-top: 14vw;
+    width:100vw;
+    height: 38vw;
+    box-sizing: border-box;
+}
+
+#banner_m>ul>li:not(:nth-of-type(1)){
+    position: relative;
+    top:-10vw;
+    margin-top:17vw;
+    opacity: 0;
+    transition: all 1s ease;
+}
+#banner_m>ul>li.on{
+    top:0;
+    opacity: 1;
+}
+#banner_m>ul>li>p{}
+#banner_m>ul>li>p>span{}
+
+#banner_m>ul>li:nth-of-type(1){
+    padding-top:18.7vw;
+    padding-left:10vw;
+    line-height: 5.5vw;
+    font-size:3vw;
+    background: url(../imgs/mobile/banner/hug_m.png) no-repeat 58.8vw 0/38vw;
+}
+#banner_m>ul>li:nth-of-type(1)>p{
+    padding: ;
+}
+#banner_m>ul>li:nth-of-type(1)>p>span{
+    font-size:6.3vw;
+}
+
+#banner_m>ul>li:nth-of-type(2){
+    padding-top:14vw;
+    padding-left:36.5vw;
+    background: url(../imgs/mobile/banner/cat_m.png) no-repeat -2.8vw 0/38vw;
+    text-align: left;
+}
+#banner_m>ul>li:nth-of-type(2)>p{
+    font-size: 4vw;
+}
+#banner_m>ul>li:nth-of-type(2)>p:nth-of-type(1){
+}
+#banner_m>ul>li:nth-of-type(2)>p:nth-of-type(1)>span{
+    font-size: 7vw;
+}
+#banner_m>ul>li:nth-of-type(2)>p:nth-of-type(3){
+    padding-top:2vw;
+    padding-right: 12.5vw;
+    font-size: 3vw;
+    line-height: 3.5vw;
+    text-align: right;
+}
+#banner_m>ul>li:nth-of-type(2)>p:nth-of-type(3)>span{}
+#banner_m>ul>li:nth-of-type(3){
+      padding-top: 15.7vw;
+      padding-right: 36.3vw;
+      background: url(../imgs/mobile/banner/dog_m.png) no-repeat 64.8vw 0/38vw;
+      text-align: right;
+      font-size: 3vw;
+  }
+
+#banner_m>ul>li:nth-of-type(3)>p{
+      line-height: 4.8vw;
+  }
+#banner_m>ul>li:nth-of-type(3)>p>span{
+      font-size: 6.5vw;
+  }

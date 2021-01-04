@@ -1,0 +1,93 @@
+main>section:first-of-type{
+  width:1920px;
+  height:800px;
+  padding:250px 235px 0 0;
+  box-sizing: border-box;
+  color:white;
+  text-align: right;
+  background: url(../imgs/invest/finance.png) no-repeat 0 0;
+}
+
+/*타이틀*/
+main>section:first-of-type>h1{
+  font-size:42px;
+}
+
+main>section:first-of-type>p{
+  margin-top:40px;
+  font-size: 32px;
+  line-height: 38px;
+}
+
+/*투자정보 목록*/
+#info{
+    box-sizing: border-box;
+    padding-top:275px; 
+    height:1840px;
+}
+
+
+#info>h1{}
+#info>div.wrapper{
+    margin:0 auto;
+    width:1080px;
+    height:1050px;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+}
+
+#info>div.wrapper.four{
+    height:540px;
+    overflow: hidden;
+}
+
+#info>div.wrapper>div{
+    display: flex;
+    justify-content: space-between;
+    flex: 1 0 350px;
+
+}
+
+#info>div.wrapper>div>p.title.on>a{
+    color:white;
+    background: rgba(137,162,173,0.4);
+    transition: all 0.3s ease;
+}
+#info>div.wrapper>div>p{
+    flex: 1 0 540px;
+    line-height: 350px;
+    text-align: center;
+}
+
+#info>div.wrapper>div>p>a{
+    width:100%;
+    height:100%;
+    display: block;
+    color:#89a2ad;
+    font-size: 50px;
+}
+
+#info>div.wrapper>div#finance{}
+#info>div.wrapper>div#finance>p{}
+#info>div.wrapper>div#finance>p:not(.title){
+    background: url(../imgs/invest/information.jpg) no-repeat 0 0;
+}
+#info>div.wrapper>div#finance>p.title{}
+#info>div.wrapper>div#finance>p>a{}
+#info>div.wrapper>div#stock{
+
+}
+#info>div.wrapper>div#stock>p{}
+#info>div.wrapper>div#stock>p.title{}
+#info>div.wrapper>div#stock>p:not(.title){
+    background: url(../imgs/invest/time.jpg) no-repeat 0 0;
+}
+#info>div.wrapper>div#stock>p>a{}
+#info>div.wrapper>div#official{}
+#info>div.wrapper>div#official>p{}
+#info>div.wrapper>div#official>p:not(.title){
+    background: url(../imgs/invest/stock.jpg) no-repeat 0 0;
+}
+#info>div.wrapper>div#official>p.title{}
+#info>div.wrapper>div#official>p>a{}

@@ -1,0 +1,138 @@
+main>section:first-of-type{
+  width:1920px;
+  height:800px;
+  padding:250px 235px 0 0;
+  box-sizing: border-box;
+  color:white;
+  text-align: right;
+  background: url(../imgs/notice/memo.png) no-repeat 0 0;
+}
+
+/*타이틀*/
+main>section:first-of-type>h1{
+  font-size:42px;
+}
+
+main>section:first-of-type>p{
+  margin-top:40px;
+  font-size: 32px;
+  line-height: 38px;
+}
+
+#board{
+    padding-top:200px;
+    box-sizing: border-box;
+    height:1700px;
+}
+/*
+함수로 div.wrapper 사이즈 정하기
+var height = li.length;
+height*140px
+*/
+#board>h1{}
+#board>div.wrapper{
+    position: relative;
+    margin: 0 auto;
+    width:960px;
+    height:1030px;
+    background: white;
+}
+#board>div.wrapper.last{
+    height:450px;
+    overflow: hidden;
+}
+#board>div.wrapper>div.content{
+    position: absolute;
+    top:0;
+    width:960px;
+    background: white;
+}
+#board>div.wrapper>div.content.on{
+    z-index: 1;
+}
+#board>div.wrapper>div.content:not(.on){
+    z-index: -1;
+}
+#board>div.wrapper>div.content>ul{}
+#board>div.wrapper>div.content>ul>li{
+    position: relative;
+    height:114px;
+    border-top: 1px solid #8aaaa9;
+}
+#board>div.wrapper>div.content>ul>li:last-child{
+    border-bottom: 1px solid #8aaaa9;
+}
+#board>div.wrapper>div.content>ul>li>a{
+    display: block;
+    height: 139px;
+}
+#board>div.wrapper>div.content>ul>li>a>p{}
+#board>div.wrapper>div.content>ul>li>a>p:nth-of-type(1){
+    margin-top:30px;
+    font-size:21px;
+    line-height: 21px;
+    color:#005454;
+}
+
+#board>div.wrapper>div.content>ul>li>a>p:nth-of-type(2){
+    overflow: hidden;
+    margin-top:20px;
+    width:450px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-size:14px;
+    line-height: 14px;
+    color:#48938f;
+}
+
+#board>div.wrapper>div.content>ul>li>a>time{
+    position: absolute;
+    right: 0; top:52px;
+    font-size:18px;
+    line-height: 18px;
+    color:#48938f;
+}
+
+#board>div.wrapper>div.list{
+    position: absolute;
+    left:230px; bottom: 0;
+}
+#board>div.wrapper>div.list{
+    width:500px;
+    display: flex;
+    justify-content: space-between;
+    font-size:24px;
+    line-height: 36px;
+}
+#board>div.wrapper>div.list>p{
+    flex: 1 0 50px;
+    box-sizing: border-box;
+    padding-top:1px;
+    color:#7bafab;
+    cursor: pointer;
+    color:#7bafab;
+}
+#board>div.wrapper>div.list>p:nth-of-type(1){
+    text-align:left;
+}
+#board>div.wrapper>div.list>p:nth-of-type(2){
+    text-align:right;
+}
+#board>div.wrapper>div.list>p>i{}
+#board>div.wrapper>div.list>ul{
+    display: flex;
+    justify-content: space-between;
+    flex: 1 0 400px;
+    height:36px;
+}
+#board>div.wrapper>div.list>ul>li{
+    flex: 1 0 100px;
+    text-align: center;
+}
+#board>div.wrapper>div.list>ul>li>a{
+    color:#7bafab;
+    transition:all 0.3s ease;
+}
+#board>div.wrapper>div.list>ul>li.on>a{
+    color:#007082;
+}

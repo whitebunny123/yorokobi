@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/invest.css">
+  <link rel="stylesheet" href="css/footer.css">
+  <link rel="stylesheet" media="only screen and (min-width:981px)" href="css/header(web).css">
+  <link rel="stylesheet" media="only screen and (max-width:980px)" href="css/header(mobile).css">
+  <link rel="stylesheet" type="text/css" href="../XEIcon-2.2.0/xeicon.min.css">
+  <script   src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="   crossorigin="anonymous"></script>
+  <script>
+      $(function(){
+        $("#go_top").click(function(e){
+                e.preventDefault();
+
+                $("html, body").animate({"scrollTop":0}, 500, function(){});
+        });
+
+          
+        $(window).scroll(function(){
+
+          var top=$(window).scrollTop();
+          if(top>10){
+              $("header").addClass("on");
+              $("#nav").addClass("on");
+              $("#go_top").css({"display":"block"}).find("i").css({"transform":"rotate(180deg)"}).parents("p");
+          }else{
+              $("header").removeClass("on");
+              $("#nav").removeClass("on");
+              $("#go_top").css({"display":"none"});
+          }
+        });
+
+        $("#nav_btn").click(function(){
+            $("#nav").css({"display":"block","opacity":"1"});
+        });
+
+        $("#nav").children("p").click(function(e){
+            e.preventDefault();
+            $("#nav").css({"display":"none","opacity":"0"});
+        });
+          
+        $("div.wrapper").children("div").mouseenter(function(){
+            $(this).children("p.title").addClass("on").end().siblings().children("p.title").removeClass("on");
+        });
+          
+        $("div.wrapper").children("div").mouseleave(function(){
+            $("div.wrapper").children("div").children("p.title").removeClass("on");
+        });
+            
+      });
+  </script>
+  <title>Document</title>
+</head>
+<body>
+ 
+  <p id="go_top">
+    <a href="#">
+        <i class="xi-angle-down-thin"></i>
+    </a>
+  </p>
+  
+  <header>
+    <p id="logo"><a href="../index.html"></a></p>
+    <div id="nav_btn">
+        <p></p>
+    </div>
+    <nav id="nav">
+     <h1 class="hidden">네비게이터</h1>
+     <p>
+         <a href="#">
+            <span class="hidden">닫기버튼</span>
+         </a>
+     </p>
+     <dl>
+         <dt>Introduction</dt>
+         <dd><a href="company.html">회사소개</a></dd>
+         <dd><a href="business.html">사업소개</a></dd>
+     </dl>
+     <dl>
+         <dt>Information</dt>
+         <dd><a href="invest.html">투자정보</a></dd>
+         <dd><a href="notice.html">공지사항</a></dd>
+         <dd><a href="contact.html">CONTACT</a></dd>
+     </dl>
+     <dl>
+         <dt class="hidden">언어선택</dt>
+         <dd><a href="#">KOR</a></dd>
+         <dd><a href="#">ENG</a></dd>
+     </dl>
+    </nav><!--nav END-->
+  </header>
+  <main>
+    <section id="title">
+      <h1>투자정보</h1>
+      <p>
+        주가정보와 공시정보를 실시간으로 확인하고, 요약 재무상태표,<br/>
+        요약 손익계산서, 자산구성비율, 투자지표 등을 투명하게 확인합니다.
+      </p>
+    </section>
+    
+    <section id="info">
+        <h1 class="hidden">투자정보 목록</h1>
+        <div class="wrapper">
+            <div id="finance">
+                <p><a href="#info" onclick="window.open('http://www.pacificbio.co.kr/content/financial_01.html', '_blank', 'width=600 height=600')"></a></p>
+                <p class="title"><a href="#info" onclick="window.open('http://www.pacificbio.co.kr/content/financial_01.html', '_blank', 'width=600 height=600')">재무정보</a></p>
+            </div>
+            <div id="stock">
+                <p class="title"><a href="#info" onclick="window.open('http://www.pacificbio.co.kr/content/stock_information.aspx', '_blank', 'width=600 height=600')">주가정보</a></p>
+                <p><a href="#info" onclick="window.open('http://www.pacificbio.co.kr/content/stock_information.aspx', '_blank', 'width=600 height=600')"></a></p>
+            </div>
+            <div id="official">
+                <p><a href="http://dart.fss.or.kr/dsab001/main.do?autoSearch=true&textCrpNm=%ED%8D%BC%EC%8B%9C%ED%94%BD%EB%B0%94%EC%9D%B4%EC%98%A4#" onclick="window.open(this.href); return false"></a></p>
+                <p class="title"><a href="http://dart.fss.or.kr/dsab001/main.do?autoSearch=true&textCrpNm=%ED%8D%BC%EC%8B%9C%ED%94%BD%EB%B0%94%EC%9D%B4%EC%98%A4#" onclick="window.open(this.href); return false">공시정보</a></p>
+            </div>
+        </div>
+    </section>
+  </main>
+  <footer>
+      <div>
+          <dl>
+              <dt class="hidden">유틸메뉴</dt>
+              <dd>
+                  <a href="#">웹접근성 안내</a>
+              </dd>
+              <dd>
+                  <a href="company.html">회사소개</a>
+              </dd>
+              <dd>
+                  <a href="business.html">사업소개</a>
+              </dd>
+              <dd>
+                  <a href="invest.html">투자정보</a>
+              </dd>
+              <dd>
+                  <a href="notice.html">공지사항</a>
+              </dd>
+              <dd>
+                  <a href="contact.html">CONTACT</a>
+              </dd>
+          </dl>
+      </div>
+      <address>
+          <p>COPYRIGHT 2016@PACIFICBIO. ALL RIGHTS RESERVED.</p>
+      </address>
+
+  </footer>
+</body>
+</html>

@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <title>포인핸드</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" media="only screen and (min-width:981px)" href="css/header_main.css">
+    <link rel="stylesheet" media="only screen and (min-width:981px)" href="css/main_main.css">
+    <link rel="stylesheet" media="only screen and (min-width:981px)" href="css/footer_main.css">
+    <link rel="stylesheet" media="only screen and (max-width:980px)" href="css/header_main_m.css">
+    <link rel="stylesheet" media="only screen and (max-width:980px)" href="css/main_main_m.css">
+    <link rel="stylesheet" media="only screen and (max-width:980px)" href="css/footer_main_m.css">
+    <link rel="stylesheet" href="css/font.css">
+    <link rel="stylesheet" type="text/css" href="XEIcon-2.2.0/xeicon.min.css">
+    <script   src="https://code.jquery.com/jquery-3.4.1.min.js"   integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="   crossorigin="anonymous"></script>
+    <script>
+
+        $(function(){
+            
+            $(window).scroll(function(){
+                var position=$(window).scrollTop();
+
+                if(position>20){
+                    $("#banner_m").find("li").eq(1).addClass("on");
+                    $("p#drag").children("span").addClass("on");
+                };
+                if(position>120){
+                    $("#banner_m").find("li").eq(2).addClass("on");
+                     $("p#drag").css({"display":"none"});
+                }
+                
+            });
+            
+            var nav=true;
+            
+            $("header").children("a.mobile").click(function(){
+                $(this).toggleClass("on");
+                
+                if(nav){
+                    $("header").children("nav").css({"display":"block"});
+                    nav=false;
+                }else{
+                    $("header").children("nav").css({"display":"none"});
+                    nav=true;
+                };
+            });
+
+            var banner={num:0,
+                        size:$("#banner_w").children("ul").children("li").length,
+                        bg:0
+                       };
+
+            $("#btn_left").click(function(){
+
+
+
+                banner.num--;
+                if(banner.num<0){
+                    banner.num=banner.size-1;
+                }
+
+               $("#banner_w").children("ul").children("li").eq(banner.num).siblings().stop().fadeOut(500).end().stop().fadeIn(200);
+            });
+
+            $("#btn_right").click(function(){
+
+
+
+                banner.num++;
+                if(banner.num>banner.size-1){
+                    banner.num=0;
+                }
+
+                /*
+                banner.bg=banner.num-1;
+                if(banner.bg<0){
+                    banner.bg=banner.size-1;
+                }
+                $("body").addClass("bg"+banner.num).removeClass("bg"+banner.bg);*/
+
+               $("#banner_w").children("ul").children("li").eq(banner.num).siblings().stop().fadeOut(500).end().stop().fadeIn(200);
+
+
+            });
+
+            function star1(){
+                $("p#star1").fadeIn(1000).fadeOut(3000);
+            };
+
+            function star2(){
+                $("p#star2").fadeOut(3000).fadeIn(300);
+            };
+
+            function star3(){
+                $("p#star3").fadeOut(500).fadeIn(2500);
+            };
+
+            function star4(){
+                $("p#star4").fadeOut(3000).fadeIn(800);
+            };
+            function star5(){
+                $("p#star5").fadeIn(1000).fadeOut(3000);
+            };
+            function star6(){
+                $("p#star6").fadeIn(1000).fadeOut(2500);
+            };
+            function star7(){
+                $("p#star7").fadeIn(700).fadeOut(2500);
+            };
+            function star8(){
+                $("p#star8").fadeOut(2100).fadeIn(500);
+            };
+            function star9(){
+                $("p#star9").fadeOut(3500).fadeIn(300);
+            };
+            function star10(){
+                $("p#star10").fadeOut(3500).fadeIn(200);
+            };
+            function star11(){
+                $("p#star11").fadeOut(2100).fadeIn(700);
+            };
+            function star12(){
+                $("p#star12").fadeIn(900).fadeOut(2600);
+            };
+            function star13(){
+                $("p#star13").fadeIn(1000).fadeOut(4200);
+            };
+            function star14(){
+                $("p#star14").fadeOut(3000).fadeIn(500);
+            };
+            function star15(){
+                $("p#star15").fadeOut(2500).fadeIn(300);
+            };
+            function star16(){
+                $("p#star16").fadeOut(4000).fadeIn(500);
+            };
+            function star17(){
+                $("p#star17").fadeOut(3000).fadeIn(700);
+            };
+            function star18(){
+                $("p#star18").fadeOut(2600).fadeIn(300);
+            };
+            function star19(){
+                $("p#star19").fadeOut(5000).fadeIn(500);
+            };
+
+
+            setInterval(star1,4000);
+            setInterval(star2,3300);
+            setInterval(star3,3100);
+            setInterval(star4,3800);
+            setInterval(star5,4000);
+            setInterval(star6,3500);
+            setInterval(star7,2800);
+            setInterval(star8,2600);
+            setInterval(star9,3800);
+            setInterval(star10,3800);
+            setInterval(star11,2500);
+            setInterval(star12,3500);
+            setInterval(star13,5200);
+            setInterval(star14,3500);
+            setInterval(star15,2800);
+            setInterval(star16,4500);
+            setInterval(star17,3700);
+            setInterval(star18,2900);
+            setInterval(star19,5500);
+
+
+
+
+
+        });
+
+
+    </script>
+</head>
+<body>
+   <p id="cat" class="web"><span class="hidden">고양이</span></p>
+   <p id="city" class="web"></p>
+   <p id="cloud" class="web"></p>
+   <p id="star1" class="star web"></p>
+   <p id="star2" class="star web"></p>
+   <p id="star3" class="star web"></p>
+   <p id="star4" class="star web"></p>
+   <p id="star5" class="star web"></p>
+   <p id="star6" class="star web"></p>
+   <p id="star7" class="star web"></p>
+   <p id="star8" class="star web"></p>
+   <p id="star9" class="star web"></p>
+   <p id="star10" class="star web"></p>
+   <p id="star11" class="star web"></p>
+   <p id="star12" class="star web"></p>
+   <p id="star13" class="star web"></p>
+   <p id="star14" class="star web"></p>
+   <p id="star15" class="star web"></p>
+   <p id="star16" class="star web"></p>
+   <p id="star17" class="star web"></p>
+   <p id="star18" class="star web"></p>
+   <p id="star19" class="star web"></p>
+
+   <header>
+       <p>
+           <a href="#"><span class="web">PawinHand</span></a>
+       </p>
+       <a href="#" class="mobile">
+         <span class="hidden">네비게이터버튼</span>
+         <p></p>
+       </a>
+       <nav>
+           <h1 class="hidden">네비게이터</h1>
+           <ul>
+               <li><a href="#">유기동물 통계</a></li>
+               <li><a href="#">가족을 찾습니다</a></li>
+               <li><a href="#">지역별 보호소</a></li>
+               <li><a href="#">어플리케이션</a></li>
+           </ul>
+       </nav>
+   </header>
+   <main>
+       <p id="drag" class="mobile">
+         <span>
+             드래그 해보세요<i class="xi-caret-down-min"></i>
+         </span>
+         <span>
+             조금 더 내려보세요<i class="xi-caret-down-min"></i>
+         </span>
+       </p>
+       <p id="cat_m" class="mobile"><span class="hidden">고양이</span></p>
+       <p id="city_m" class="mobile"></p>
+       <p id="cloud_m" class="mobile"></p>
+       <article id="banner_w" class="web">
+           <h1 class="hidden">배너</h1>
+           <p id="btn_left" class="btn web"><i class="xi-angle-left"></i></p>
+           <p id="btn_right" class="btn web"><i class="xi-angle-right"></i></p>
+           <ul>
+               <li>
+                   <p>
+                       포인핸드는 <span>사람과 동물</span><br/>
+                       <span>모두가 행복한 세상</span>을 만들어갑니다.
+                   </p>
+               </li>
+               <li>
+                   <p><span>가족</span>이라면 <span>끝까지 함께</span> 해주세요.</p>
+                   <p class="web">매년 발생하는 유기동물 10만마리,버려진 동물의 절반이 유기동물보호소에서 차가운 죽음을 맞이합니다.</p>
+                   <p class="mobile">매년 발생하는 유기동물 10만마리, 버려진 동물의 절반이<br/>유기동물보호소에서 차가운 죽음을 맞이합니다.</p>
+
+               </li>
+               <li>
+                   <p>
+                       소중한 가족을 지키는 첫걸음, <span>반려동물 등록제</span><br/>
+                       3개월령 이상 반려견은 등록 필수!
+                   </p>
+               </li>
+           </ul>
+       </article>
+       <article id="banner_m" class="mobile">
+           <h1 class="hidden">배너</h1>
+           <p id="btn_left" class="btn web"><i class="xi-angle-left"></i></p>
+           <p id="btn_right" class="btn web"><i class="xi-angle-right"></i></p>
+           <ul>
+               <li>
+                   <p>
+                       포인핸드는 <span>사람과 동물</span><br/>
+                       <span>모두가 행복한 세상</span>을 만들어갑니다.
+                   </p>
+               </li>
+               <li>
+                   <p><span>가족</span>이라면 <span>끝까지 함께</span> 해주세요.</p>
+                   <p class="web">매년 발생하는 유기동물 10만마리,버려진 동물의 절반이 유기동물보호소에서 차가운 죽음을 맞이합니다.</p>
+                   <p class="mobile">매년 발생하는 유기동물 10만마리, 버려진 동물의 절반이<br/>유기동물보호소에서 차가운 죽음을 맞이합니다.</p>
+
+               </li>
+               <li>
+                   <p>
+                       소중한 가족을 지키는 첫걸음, <span>반려동물 등록제</span><br/>
+                       3개월령 이상 반려견은 등록 필수!
+                   </p>
+               </li>
+           </ul>
+       </article>
+   </main>
+   <footer>
+        <address>
+            <p>
+                <i class="xi-mail-o"></i> pawinhandproject@gmail.com
+            </p>
+            <div>
+                <p>ⓒ Pawinhandteam all right reserved.</p>
+                <p>ⓒ 포인핸드 제공/데이터 출처  농림축산식품부 </p>
+            </div>
+        </address>
+   </footer>
+</body>
+</html>

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        
+        @font-face{
+            font-family:"youth";
+            src:url(pacificBIO/font/Youth.eot);
+            src:url(※), url(pacificBIO/font/Youth.woff) format("woff"), url(pacificBIO/font/Youth.ttf) format("trueType");
+        }
+        *{margin:0; padding:0; font-family: "youth"; text-align: center;}
+        a{text-decoration: none; color:#000;}
+        .clearfix::before, .clearfix::after{
+            display: block;
+            content:"";
+            clear:both;
+        }
+        
+        body{
+            background: #000;
+        }
+        #wrapper{
+            margin: 20vh auto 0;
+            width:800px;
+            padding-top: 1px;
+        }
+        header > h1{
+            width:800px;
+            margin: 50px auto 5vh;
+            font-size:24px;
+            font-weight: 100;
+        }
+        header > h1 > a{
+            display: block;
+            height:70px;
+            line-height: 70px;
+            color:#fff;
+            border-radius: 5px;
+        }
+        #wrapper > section{
+            width:650px;
+            margin: 0 auto;
+        }
+        #wrapper > section > div{
+            box-sizing: border-box;
+            width:270px;
+            height:270px;
+            border-radius: 50%;
+            margin-right: 110px;
+            background: white;
+            float:left;
+            font-size: 36px;
+        }
+        #wrapper > section > div:last-child{
+            margin-right: 0;
+        }
+        #wrapper > section > div:hover > a{
+            background: #000;
+            color:#fff;
+            border: 5px solid #fff;
+        }
+        #wrapper > section > div > a{
+            display: block;
+            line-height: 270px;
+            color:#000;
+            border-radius: 50%;
+        }
+    </style>
+</head>
+<body>
+   <div id="wrapper">
+    <header>
+        <h1>
+            <a href="#">안녕하세요. 웹디자이너 신입 지원자 이기쁨의 포트폴리오 사이트입니다.</a>
+        </h1>
+    </header>
+    <section class="clearfix">
+        <div>
+            <a href="pacificBIO/index.html">pacificBIO</a>
+        </div>
+        <div>
+            <a href="PAWINHAND/index.html">PAWINHAND</a>
+        </div>
+    </section>
+    <footer>
+        
+    </footer>
+   </div>
+</body>
+</html>

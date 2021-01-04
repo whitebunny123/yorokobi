@@ -1,0 +1,23 @@
+footer{
+    box-sizing: border-box;
+    padding-top:32px;
+    height:104px;
+    font-family: "whitecat";
+    font-size:14px;
+    background: rgba(0,0,0,0.4);
+    color:white;
+    text-align: center;
+}
+
+footer>address{}
+footer>address>p{}
+footer>address>p>i{}
+footer>address>div{
+    display: flex;
+    justify-content: space-between;
+    margin: 15px auto 0;
+    width:400px;
+}
+footer>address>div>p{
+    flex: 1 0 50%;
+}

@@ -1,0 +1,502 @@
+@font-face{
+    font-family:"youth";
+    src:url(../font/Youth.eot);
+    src:local(※), url(../font/Youth.woff) format('woff'), url(../font/Youth.ttf) format('trueType');
+    font-weight:normal;
+    font-style:normal;
+
+}
+
+body{
+    font-family: "youth";
+    min-width: 1320px;
+}
+/*스크롤 인디케이터
+p#scroll{
+    z-index: 100;
+    width:50px;
+    height:30px;
+    background: rgba(0,0,0,.5);
+    color:white;
+    font-size:24px;
+    line-height: 30px;
+    text-align: center;
+    position: fixed;
+    right:0;
+}
+*/
+p#go_top{
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left:93%;
+    bottom:36px;
+    box-sizing: border-box;
+    padding:5px;
+    width:70px;
+    height:70px;
+    border: 2px solid #E2E2E2;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.1);
+    line-height: 70px;
+    text-align: center;
+}
+p#go_top>a{
+    display: block;
+    font-size: 32px;
+    color:#e2e2e2;
+}
+p#go_top>a>i{}
+
+header{
+    position: relative;
+    height: calc(84vh + 213px);
+    min-height: 900px;
+    min-width: 1540px;
+}
+
+/*헤더탑*/
+
+/* 클라스 on주고 스크롤시 position:fixed
+헤더탑 로고, 네비게이션 버튼 사이즈 줄이기*/
+#header_top{
+    height:213px;
+    transition: all 0.3s ease;
+}
+
+/*로고*/
+
+#header_top>div{
+    float:left;
+    margin: 40px 0 0 65px;
+    width:110px;
+}
+#header_top>div>a{
+    display:block;
+    width:110px;
+    height:130px;
+    margin-left:6px;
+}
+#header_top>div>a>p#logo{
+    width:110px;
+    height:130px;
+    background: url(../imgs/header/headertop/pacificBIO.png) no-repeat 0 0;
+}
+
+#header_top>a{
+    display: block;
+    float:right;
+    margin: 77px 76px 0 0;
+    padding-top:1px;
+    width:61px;
+    height:56px;
+}
+#header_top>a>p#nav_button{
+    position: relative;
+    width:61px;
+    height:2px;
+    margin-top:25px;
+    background: #666666;
+}
+
+#header_top>a>p#nav_button:before{
+    content: "";
+    position: absolute;
+    bottom:-26px;
+    width:61px;
+    height:2px;
+    background: #666666;
+}
+
+#header_top>a>p#nav_button:after{
+    content: "";
+    position: absolute;
+    top:-26px;
+    width:61px;
+    height:2px;
+    background: #666666;
+}
+
+/*스크롤시*/
+#header_top.on{
+    position:fixed;
+    z-index: 500;
+    width:100%;
+    height:120px;
+    background: rgba(255,255,255,0.8);
+    border-bottom: 1px solid #f4f4f4;
+}
+
+#header_top.on>div{
+    float:left;
+    margin: 18px 0 0 30px;
+    width:75px;
+}
+#header_top.on>div>a{
+    display:block;
+    width:75px;
+    height:85px;
+    margin-left:6px;
+}
+#header_top.on>div>a>p#logo{
+    width:75px;
+    height:85px;
+    background: url(../imgs/header/headertop/pacificBIO_s.png) no-repeat 0 0;
+}
+
+#header_top.on>a{
+    display: block;
+    float:right;
+    margin: 32px 50px 0 0;
+    padding-top:1px;
+    width:41px;
+    height:35px;
+}
+#header_top.on>a>p#nav_button{
+    position: relative;
+    width:51px;
+    height:2px;
+    margin-top:25px;
+    background: #939393;
+}
+
+#header_top.on>a>p#nav_button:before{
+    content: "";
+    position: absolute;
+    bottom:-21px;
+    width:51px;
+    height:2px;
+    background: #939393;
+}
+
+#header_top.on>a>p#nav_button:after{
+    content: "";
+    position: absolute;
+    top:-21px;
+    width:51px;
+    height:2px;
+    background: #939393;
+}
+
+/*네비게이터*/
+
+#nav{
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    right:0; top:0;
+    clear:both;
+    width:50vw;
+    min-width: 770px;
+    height: 100vh;
+    padding-top:76px;
+    box-sizing: border-box;
+    background: rgba(255,255,255,0.95);
+}
+
+#nav>p{
+    width:55px;
+    height:55px;
+    float:right;
+    margin-right: 78px;
+    background: url(../imgs/header/nav/close_button.png) no-repeat 0 0/contain;
+}
+
+}
+#nav>p>a{
+    display: block;
+    width:55px;
+    height:55px;
+}
+
+/*스크롤시 닫기버튼*/
+#nav.on{
+  padding-top:35px;
+}
+#nav.on>p{
+    width:50px;
+    height:50px;
+    float:right;
+    margin-right: 40px;
+}
+
+}
+#nav.on>p>a{
+    display: block;
+    width:50px;
+    height:50px;
+
+}
+
+/*닫기버튼 끝*/
+
+#nav>dl{
+
+    margin-left: 146px;
+}
+#nav>dl>dt{
+    padding-bottom: 25px;
+    font-size: 48px;
+    line-height: 48px;
+    color: #889C9E;
+}
+#nav>dl>dd{
+    font-size:16px;
+}
+
+#nav>dl:not(:nth-of-type(3))>dd{
+    line-height: 50px;
+    margin-left: 20px;
+}
+
+#nav>dl>dd>a{
+    color: #7BADAC;
+
+}
+
+#nav>dl:nth-of-type(1){
+    margin-top: 42px;
+}
+#nav>dl:nth-of-type(1)>dt{
+    position: relative;
+}
+#nav>dl:nth-of-type(1)>dt:before{
+    content: "";
+    position: absolute;
+    left:-59px; top:-7px;
+    width:45px; height:45px;
+    background: url(../imgs/header/nav/leaf1.png) no-repeat 0 0;
+}
+#nav>dl:nth-of-type(1)>dd{}
+#nav>dl:nth-of-type(1)>dd:nth-of-type(2){
+    margin-bottom: 102px;
+}
+#nav>dl:nth-of-type(1)>dd>a{}
+
+#nav>dl:nth-of-type(2){}
+#nav>dl:nth-of-type(2)>dt{
+    position: relative;
+}
+#nav>dl:nth-of-type(2)>dt:before{
+    content: "";
+    position: absolute;
+    left:-59px; top:-7px;
+    width:45px; height:45px;
+    background: url(../imgs/header/nav/leaf2.png) no-repeat 0 0;
+}
+#nav>dl:nth-of-type(2)>dd{}
+#nav>dl:nth-of-type(2)>dd:last-child{
+    margin-bottom: 70px;
+}
+#nav>dl:nth-of-type(2)>dd>a{}
+
+#nav>dl:nth-of-type(3){
+    margin-left: 140px;
+    height:28px;
+}
+#nav>dl:nth-of-type(3)>dd{
+    float:left;
+    width:57px; height:28px;
+    margin-left: 5px;
+    margin-right: 17px;
+    line-height: 28px;
+    text-align: center;
+    background: #D1E3E8;
+}
+#nav>dl:nth-of-type(3)>dd>a{
+    color:white;
+}
+
+/*배너*/
+#banner{
+    overflow: hidden;
+    clear:both;
+    position:relative;
+    width:89vw;
+    min-width:1320px;
+    height:84vh;
+    min-height:688px;
+    transition: all 0.3s ease;
+}
+#banner>ul{}
+#banner>ul>li{
+    position:absolute;
+    left:0; top:0;
+    width:100%;
+    min-width:1320px;
+    height:84vh;
+    min-height: 688px;
+}
+
+/*배너공통*/
+
+#banner>ul>li>p{
+    margin-top:calc(165px + 17vh);
+    margin-left: 200px;
+    height:72px;
+
+}
+#banner>ul>li>p>span{
+    color:white;
+    line-height: 72px;
+}
+
+#banner>ul>li p>span:nth-of-type(2n+1){
+    font-size:calc(12px + 1.25vh);
+    vertical-align:baseline;
+}
+
+#banner>ul>li p>span:nth-of-type(1){
+}
+#banner>ul>li p>span:nth-of-type(2){
+    font-size:calc(36px + 3.75vh);
+}
+#banner>ul>li>p>span:nth-of-type(3){
+}
+
+/*첫번째 배너*/
+
+#banner>ul>li:nth-of-type(1){
+    z-index: 1;
+    background: url(../imgs/header/banner/nature1.jpg) no-repeat 0 0/cover;
+}
+
+
+
+/*두번째 배너*/
+
+#banner>ul>li:nth-of-type(2){
+    background: url(../imgs/header/banner/leaf1.jpg) no-repeat 0 0/cover;
+}
+
+/*세번째 배너*/
+
+#banner>ul>li:nth-of-type(3){
+    background: url(../imgs/header/banner/nature3.jpg) no-repeat 0 0/cover;
+    color:white;
+}
+
+#banner>ul>li.top{
+    z-index:10;
+}
+#banner>ul>li.middle{
+    z-index:5;
+}
+
+#banner>ul>li:nth-of-type(3)>div{
+    margin-top:calc(150px + 15vh);
+    padding-right: calc(7.5vw + 144px);
+    width:100%;
+    box-sizing: border-box;
+    text-align: right;
+}
+
+#banner>ul>li:nth-of-type(3)>div>p:nth-of-type(2){
+    margin-top: 20px;
+}
+#banner>ul>li:nth-of-type(3)>div>p:nth-of-type(2)>span:nth-of-type(1){
+    font-size:calc(36px + 3.75vh);
+}
+#banner>ul>li:nth-of-type(3)>div>p:nth-of-type(2)>span:nth-of-type(2){
+    font-size:calc(12px + 1.25vh);
+}
+
+
+#banner>ul>li>a{}
+#banner>ul>li>a>img{}
+
+/*배너버튼*/
+
+#banner_button1{
+    position: absolute;
+    left:calc(50% - 69px); bottom:3.8%;
+    width:138px;
+    z-index: 300;
+    height:24px;
+}
+#banner_button1>p{
+    cursor: pointer;
+    float:left;
+    margin-right: 33px;
+    width:24px;
+    height:24px;
+    border-radius:50%;
+    background: rgba(255,255,255,0.8);
+    box-shadow: 1px 1px 2px #8E8E8E;
+}
+
+#banner_button1>p:last-child{
+    margin-right: 0;
+}
+
+#banner_button1>p.on{
+     background: rgba(102,190,211,0.8);
+}
+
+/*재생버튼*/
+#play_button{
+    position: absolute;
+    z-index: 11;
+    bottom:2.5%; right:25px;
+}
+
+#play_button>p{
+    width:50px;
+    height:50px;
+    cursor: pointer;
+    font-size:50px;
+    color:white;
+    text-shadow: 1px 1px 2px #8E8E8E;
+}
+#play_button>p>i{
+
+}
+
+/*사이드 버튼*/
+#banner_button2{
+    position:absolute;
+    left:calc(89vw - 20.5vh); top:213px;
+    z-index: 10;
+    width:41vh;
+    min-width: 300px;
+    height:56vh;
+    min-height: 400px;
+    background: url(../imgs/header/banner/leaves6.png) no-repeat 0 0/cover;
+    transition: all 0.3s ease;
+}
+#banner_button2.on{
+  top:0px;
+}
+#banner_button2>div{
+    margin: 70% 0 0 30%;
+    width:70px;
+}
+#banner_button2>div>p{
+    text-align: center;
+    font-size: calc(2.5vh + 24px);
+    color:white;
+}
+#banner_button2>div>p:first-of-type{
+
+}
+
+#banner_button2>div>p:not(:nth-child(2)){
+    margin:2.5vh 0 2.5vh 0.5vh;
+    font-size: calc(19px + 2vh);
+    cursor: pointer;
+}
+#banner_button2>div>p:first-child{
+
+}
+#banner_button2>div>p:first-child>a{}
+#banner_button2>div>p:first-child>a>img{}
+#banner_button2>div>p:nth-child(2){
+    color:white;
+}
+#banner_button2>div>p:last-child{}
+#banner_button2>div>p:last-child>a{}
+#banner_button2>div>p:last-child>a>img{}
+
+#banner_button2>div>p>span{}
+
+.mobile{display:none;}
